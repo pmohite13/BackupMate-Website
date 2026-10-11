@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Silent install · BackupMate</title>
+<meta name="description" content="Install, upgrade and uninstall BackupMate silently with msiexec, for scripts and deployment tools.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/docs/silent-install">
+<meta property="og:title" content="Silent install · BackupMate">
+<meta property="og:description" content="Install, upgrade and uninstall BackupMate silently with msiexec, for scripts and deployment tools.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/docs/silent-install">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/docs/">Guides</a> › Silent install</p>
+    <h1>Silent install</h1>
+    <p class="lead">Both installers are standard Windows Installer packages. They install without prompts, so they work with Group Policy, Intune, PDQ, an RMM tool or a plain script.</p>
+
+    <h2>Commands</h2>
+    <p>Run from an elevated prompt, or as SYSTEM from your deployment tool. Use the file names as you downloaded them; they include the version number.</p>
+    <table>
+      <tr><th>Install the client</th><td><code>msiexec /i BackupMate.msi /qn /l*v install.log</code></td></tr>
+      <tr><th>Install the server</th><td><code>msiexec /i BackupMateServer.msi /qn /l*v server-install.log</code></td></tr>
+      <tr><th>Upgrade</th><td>The same command with the newer file. It upgrades in place and keeps settings and data.</td></tr>
+      <tr><th>Uninstall</th><td><code>msiexec /x BackupMate.msi /qn</code></td></tr>
+    </table>
+    <ul>
+      <li><code>/qn</code> shows nothing. Use <code>/qb</code> for a progress bar only.</li>
+      <li><code>/l*v</code> writes a full log, which is what to send us if an install fails.</li>
+      <li>Installing silently accepts the <a href="/legal/eula">licence agreement</a> on behalf of your organisation.</li>
+    </ul>
+
+    <h2>What a silent install does and does not do</h2>
+    <p>It installs the software and starts the service. It does <strong>not</strong> connect a PC to your server: that still needs the server's addresses, its certificate, a one-time enrolment token and a passphrase, entered in the BackupMate window on that PC. See the <a href="/docs/quick-start">quick start</a>, steps 5 to 9.</p>
+    <p>If you are rolling out to many PCs and want the connection scripted as well, <a href="/contact">write to us</a>. It can be done with a prepared configuration, and we would rather set it up with you than have you guess at it.</p>
+
+    <h2>What is installed where</h2>
+    <table>
+      <tr><th>Programs</th><td><code>C:\Program Files\BackupMate</code></td></tr>
+      <tr><th>Settings, logs and (on the server) backups</th><td><code>C:\ProgramData\BackupMate</code></td></tr>
+      <tr><th>Services</th><td><code>BackupMate</code> on a PC, <code>BackupMateServer</code> on the server. Both start automatically.</td></tr>
+    </table>
+    <p>Uninstalling removes the programs and the service. It leaves <code>C:\ProgramData\BackupMate</code> alone on purpose, so that reinstalling picks up where it left off and so that an uninstall can never be the thing that deletes your backups.</p>
+
+    <h2>Firewall</h2>
+    <p>The client needs no inbound ports. The server needs TCP 8443 and 8444 open to the office network, and 8445 if you want to open its console from another machine. The installer does not change the firewall; see step 3 of the <a href="/docs/quick-start">quick start</a>.</p>
+
+    <h2>Verifying the installers</h2>
+    <p>Compare each file's SHA-256 with the one on the <a href="/download">download page</a> before deploying it:</p>
+<pre><code>Get-FileHash .\BackupMate.msi -Algorithm SHA256</code></pre>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>

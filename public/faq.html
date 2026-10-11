@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Questions · BackupMate</title>
+<meta name="description" content="Common questions about BackupMate: what it needs, how it compares with free tools and cloud backup, what happens when a licence lapses, and what it does not do.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/faq">
+<meta property="og:title" content="Questions · BackupMate">
+<meta property="og:description" content="Common questions about BackupMate: what it needs, how it compares with free tools and cloud backup, what happens when a licence lapses, and what it does not do.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/faq">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose">
+  <div class="wrap narrow">
+    <h1>Questions</h1>
+
+    <h2>Before you install</h2>
+    <details><summary>What do I need for the server?</summary><p>Any 64-bit Windows 10 or 11 PC, or Windows Server 2016 or later, that stays switched on and has spare disk space. It does not need to be a "server" in the hardware sense: a desktop in the corner is fine. A separate internal or external disk for the backups is a good idea.</p></details>
+    <details><summary>How much disk space?</summary><p>Start by allowing as much as the files you are protecting. After the first backup only changes are stored, identical files across PCs are stored once, and everything is compressed, so growth is usually slow. How long you keep old versions is the main thing that decides it.</p></details>
+    <details><summary>Does it slow the PCs down?</summary><p>The first backup of a PC reads everything and takes a while. After that a run usually takes minutes. You choose when it runs, and you can cap the bandwidth the whole office uses.</p></details>
+    <details><summary>Does it work over Wi-Fi, or from home?</summary><p>Over office Wi-Fi, yes. From outside the office, only if that PC can reach the server, for example over your own VPN. A laptop that is away simply backs up when it is next on the office network.</p></details>
+    <details><summary>Can it back up Tally, or another program's data while it is open?</summary><p>BackupMate uses Windows' snapshot service, so files that are open are captured as they were at one moment. For any database, the safest habit is still to schedule the backup for when the program is closed, or to back up the program's own export or backup folder as well.</p></details>
+    <details><summary>Mac or Linux?</summary><p>Not today. Windows only, for both the server and the PCs.</p></details>
+
+    <h2>Compared with other options</h2>
+    <details><summary>There are free backup tools. Why pay?</summary><p>There are, and some are very good. If you are comfortable setting one up and looking after it yourself, you may not need us, and BackupMate is free for 3 PCs in any case. What a paid plan adds is a person to ask when a restore is urgent, set-up that does not need an IT background, and a company that is accountable to you.</p></details>
+    <details><summary>Why not cloud backup?</summary><p>Cloud backup is a good choice for many people, and it gives you an off-site copy that BackupMate alone does not. Offices choose BackupMate when they do not want their files with a third party, when their internet connection makes uploading everything impractical, or when they would rather pay once a year for software than every month per gigabyte.</p></details>
+    <details><summary>We already copy files to an external drive.</summary><p>That is far better than nothing. It depends on someone remembering, it usually keeps one version rather than a history, and a drive that is plugged in is encrypted by ransomware along with everything else. BackupMate runs by itself, keeps dated versions, and holds deleted backups for 30 days.</p></details>
+
+    <h2>Licences and money</h2>
+    <details><summary>Is the free plan really free?</summary><p>Yes. Up to 3 PCs, every feature, no time limit, no card. It does not include support.</p></details>
+    <details><summary>What if my licence runs out and I do not renew?</summary><p>It carries on for 14 more days. After that the first 3 PCs keep backing up and the others pause. Nothing is deleted, and you can restore any file from any PC at any time, licensed or not.</p></details>
+    <details><summary>Do you offer refunds?</summary><p>Yes, in full, within 14 days of your first purchase. See the <a href="/legal/refund">refund policy</a>.</p></details>
+    <details><summary>Can I get a GST invoice?</summary><p>Yes. Give us your GSTIN when you order and it appears on the invoice.</p></details>
+    <details><summary>Do you set it up for us?</summary><p>The guides are written so that you can. If you would rather we did it with you, <a href="/contact">ask</a>; remote set-up help is available.</p></details>
+
+    <h2>Safety</h2>
+    <details><summary>Can you see our files?</summary><p>No. They never leave your network, and we have no access to your server. See the <a href="/security">security page</a>.</p></details>
+    <details><summary>What if I forget the passphrase?</summary><p>In the default mode, the backups cannot be opened without it, by anyone. If that worries you more than privacy does, choose the mode where the server keeps a copy of the key so that an administrator can always recover files. The <a href="/security">security page</a> compares the two.</p></details>
+    <details><summary>What if the server itself fails?</summary><p>Then the backups on it are at risk, like anything on a single machine. Keep a second copy of the server's storage folder on another disk. We are happy to advise on a simple routine for this.</p></details>
+    <details><summary>Does BackupMate connect to the internet?</summary><p>Only to check, once a day, whether a newer version exists. That request says nothing about you and can be switched off. Details are on the <a href="/security">security page</a>.</p></details>
+
+    <p style="margin-top:32px">Something else? <a href="/contact">Ask us</a>.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>

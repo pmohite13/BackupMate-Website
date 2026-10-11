@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Features · BackupMate</title>
+<meta name="description" content="What BackupMate does: scheduled encrypted backups of Windows PCs to your own server, restore from the PC or the server, email alerts, ransomware-resistant storage, and one console for the whole office.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/features">
+<meta property="og:title" content="Features · BackupMate">
+<meta property="og:description" content="What BackupMate does: scheduled encrypted backups of Windows PCs to your own server, restore from the PC or the server, email alerts, ransomware-resistant storage, and one console for the whole office.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/features">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features" aria-current="page">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <h1>What BackupMate does</h1>
+    <p class="lead">Everything here is in the free download. Nothing is held back for a higher tier; plans differ only in how many PCs you can protect and whether support is included.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Backing up</h2>
+    <div class="grid">
+      <div class="card"><h3>Runs by itself</h3><p>Installed as a Windows service, so backups run on schedule whether or not anyone is logged in. A PC that was switched off at backup time catches up when it comes back.</p></div>
+      <div class="card"><h3>Schedules in plain words</h3><p>Every day at a time, every few hours, or certain days of the week. The console says back what it will do. Cron expressions are there if you want them.</p></div>
+      <div class="card"><h3>Pick folders by ticking them</h3><p>Browse the PC's folders and tick what matters. One button adds Desktop, Documents and Downloads, including when they have been moved into OneDrive.</p></div>
+      <div class="card"><h3>Open and locked files</h3><p>Uses Windows' own snapshot service (VSS), so a file that is open in another program, such as a live accounts database, is still captured consistently.</p></div>
+      <div class="card"><h3>Only what changed</h3><p>After the first run, each backup sends only new and changed data. Identical content anywhere in the office is stored once, and everything is compressed.</p></div>
+      <div class="card"><h3>Leave the junk out</h3><p>Skip caches, build output and disk images with preset patterns. It can cut a backup to a fraction of its size.</p></div>
+      <div class="card"><h3>One bad file does not stop the rest</h3><p>If antivirus blocks a file, or one cannot be read, that file is skipped and reported by name. The other hundred thousand are still backed up.</p></div>
+      <div class="card"><h3>You decide how far back</h3><p>Keep so many hourly, daily, weekly and monthly backups. The console spells out what your numbers mean before you save them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Getting files back</h2>
+    <div class="grid">
+      <div class="card"><h3>Pick a day, pick the files</h3><p>Restore points are listed by date. Browse inside one and tick exactly what you want back, or take everything.</p></div>
+      <div class="card"><h3>Restore where you choose</h3><p>Back to where it was, or to another folder so you can compare before replacing anything.</p></div>
+      <div class="card"><h3>When the PC itself is gone</h3><p>If you choose to let the server hold the keys, an administrator can recover any machine's files from the server and download them, with no need for the broken PC. <a href="/security">What that choice means</a>.</p></div>
+      <div class="card"><h3>Never locked behind a licence</h3><p>Restore works on the free plan, during the trial, and after a paid licence has expired. Always.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Knowing it is working</h2>
+    <div class="grid">
+      <div class="card"><h3>Email alerts</h3><p>When a backup fails, when a PC has not backed up for too long, and when it is healthy again. Uses your own mail account; a test button proves it works before you rely on it.</p></div>
+      <div class="card"><h3>One page for every PC</h3><p>The server's console lists each computer, when it last backed up, which version it runs and whether it is overdue.</p></div>
+      <div class="card"><h3>History on every backup</h3><p>Each PC shows its recent runs: what happened, how long it took, and the full reason when one failed. Intermittent problems show up here.</p></div>
+      <div class="card"><h3>Errors written for people</h3><p>"The server cannot be reached; this PC will try again by itself" rather than a number. And what to do about it, when there is something to do.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Keeping the backups safe</h2>
+    <div class="grid">
+      <div class="card"><h3>Encrypted on the PC</h3><p>Files are encrypted with AES-256 before they are sent. By default the server holds only data it cannot read.</p></div>
+      <div class="card"><h3>Only your PCs can connect</h3><p>Each computer is issued its own certificate when you add it. Anything else on the network is refused, including for the stored backups themselves.</p></div>
+      <div class="card"><h3>A recycle bin for the backups</h3><p>Whatever a PC deletes or overwrites on the server is held for 30 days first. If malware on one machine tries to destroy the backups, an administrator puts them back.</p></div>
+      <div class="card"><h3>Every sensitive action recorded</h3><p>Who recovered whose files, who changed a setting, who retired a machine: written to the Windows Event Log with a name and a time.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/security">Read the security page</a> for the detail, including what BackupMate does not protect against.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>What it is not</h2>
+    <p class="lead">Better to know before you install than after.</p>
+    <div class="grid">
+      <div class="card"><h3>Not a disk image tool</h3><p>BackupMate backs up files and folders. It does not make a bootable image of a whole Windows installation, so rebuilding a dead PC means reinstalling Windows and your programs, then restoring your files.</p></div>
+      <div class="card"><h3>Not an off-site copy</h3><p>Your backups live on your server, in your office. A fire or theft that takes the server takes them too, unless you also copy the server's storage somewhere else. We recommend that you do.</p></div>
+      <div class="card"><h3>Windows only</h3><p>Both the server and the clients run on 64-bit Windows. There is no Mac or Linux client today.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>

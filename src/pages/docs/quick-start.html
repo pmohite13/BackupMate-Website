@@ -1,0 +1,104 @@
+title: Quick start
+description: Install the BackupMate server, connect your first PC and take your first backup, step by step.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/docs/">Guides</a> › Quick start</p>
+    <h1>Quick start</h1>
+    <p class="lead">Install the server, connect one PC, take a backup and restore a file. Allow about fifteen minutes. Do every step once on one PC before rolling out to the rest.</p>
+
+    <div class="note"><p><strong>You will need:</strong> the two installers from the <a href="/download">download page</a>, administrator rights on both machines, and both machines on the same office network.</p></div>
+
+    <h2>Part 1: the server</h2>
+
+    <h3>1. Install it</h3>
+    <p>On the PC that will hold the backups, run <code>BackupMateServer</code> and accept the prompts. It starts by itself; there is nothing to configure first.</p>
+
+    <h3>2. Decide where backups are stored (optional, but do it now)</h3>
+    <p>By default they go under <code>C:\ProgramData\BackupMate\Server\storage</code>. To use another disk, open <code>C:\ProgramData\BackupMate\Server\server.json</code> in Notepad <em>as administrator</em>, change <code>storageDir</code>, save, and restart the <strong>BackupMateServer</strong> service from the Services app.</p>
+<pre><code>"storageDir": "D:/BackupMate/storage"</code></pre>
+    <ul>
+      <li>Use forward slashes, as above.</li>
+      <li>Use a folder, not the top of a drive: <code>D:/BackupMate/storage</code>, not <code>D:/</code>.</li>
+      <li>Do this before any PC backs up. Changing it later does not move existing backups.</li>
+    </ul>
+
+    <h3>3. Let the office PCs reach it</h3>
+    <p>Windows Firewall blocks incoming connections until told otherwise. On the server, open PowerShell as administrator and run:</p>
+<pre><code>New-NetFirewallRule -DisplayName "BackupMate storage" -Direction Inbound -LocalPort 8443 -Protocol TCP -Action Allow -Profile Private,Domain
+New-NetFirewallRule -DisplayName "BackupMate control" -Direction Inbound -LocalPort 8444 -Protocol TCP -Action Allow -Profile Private,Domain</code></pre>
+    <p class="small">This allows the two ports on private and domain networks only. Do not forward these ports through your router.</p>
+
+    <h3>4. Open the server's console</h3>
+    <p>From the Start menu on the server, open <strong>BackupMate Admin Console</strong> (it opens <code>https://localhost:8445</code>).</p>
+    <ul>
+      <li>Your browser will warn that the certificate is not trusted. That is expected: the server issues its own. Choose to continue.</li>
+      <li>Sign in as <code>admin</code>. The password was generated for you and is in <code>C:\ProgramData\BackupMate\Server\ca\admin-password.txt</code>.</li>
+    </ul>
+
+    <h3>5. Create a code for the first PC</h3>
+    <p>Go to <strong>Settings → Licence and machines → Add a machine</strong> and press <strong>Create an enrolment token</strong>. Copy the token shown. It connects one PC, once, and is shown only this time. Create a new one for each PC you add.</p>
+
+    <h3>6. Copy the server's certificate</h3>
+    <p>Copy the file <code>C:\ProgramData\BackupMate\Server\ca\ca.pem</code> from the server to the PC you are about to connect, for example on a USB stick. A good place to put it is <code>C:\ProgramData\BackupMate\ca.pem</code>.</p>
+    <div class="note warn"><p>Copy <code>ca.pem</code> only. Never copy <code>ca.key</code>, which sits beside it: that file must not leave the server.</p></div>
+
+    <h2>Part 2: the first PC</h2>
+
+    <h3>7. Install the client</h3>
+    <p>Run <code>BackupMate</code> on the PC. A BackupMate icon appears in the notification area by the clock. Click it and choose <strong>Open BackupMate</strong>.</p>
+
+    <h3>8. Connect it to the server</h3>
+    <p>Under <strong>Backup servers</strong>, press <strong>Scan</strong> and choose your server when it appears. If it does not appear, press <strong>Connect…</strong> and type the addresses yourself. Fill in:</p>
+    <table>
+      <tr><th>Control URL</th><td><code>https://SERVER:8444</code>, where SERVER is the server's computer name or IP address</td></tr>
+      <tr><th>Storage URL</th><td><code>https://SERVER:8443</code></td></tr>
+      <tr><th>CA certificate file</th><td>Where you put <code>ca.pem</code> in step 6</td></tr>
+      <tr><th>Enrolment token</th><td>The token from step 5</td></tr>
+      <tr><th>Client ID</th><td>A name for this PC, such as <code>reception-pc</code>. It must be different for every PC.</td></tr>
+      <tr><th>Repository passphrase</th><td>The passphrase that encrypts the backups. See the warning below.</td></tr>
+    </table>
+    <div class="note warn"><p><strong>Write the passphrase down somewhere safe before you press Connect.</strong> Files are encrypted with it before they leave the PC, and the server never sees it. If it is lost, the backups cannot be opened by anyone, including us. A password manager is the right place for it. If you would rather the server kept a copy so that an administrator can always recover files, read <a href="/security">Who holds the key</a> first and <a href="/contact">ask us</a> how to switch that on.</p></div>
+    <p>Press <strong>Connect</strong>. The PC is now enrolled.</p>
+
+    <h3>9. Choose what to back up</h3>
+    <ol>
+      <li>Tick the folders that matter, or press <strong>Add my Desktop, Documents and Downloads</strong>.</li>
+      <li>Choose when it should run, for example every day at 1 pm.</li>
+      <li>Check how long backups are kept. The page says what your numbers mean.</li>
+      <li>Press <strong>Add to backups</strong>.</li>
+    </ol>
+
+    <h3>10. Take the first backup</h3>
+    <p>Press <strong>Run now</strong>. The first run reads everything and takes the longest; later runs send only what changed.</p>
+
+    <h2>Part 3: prove it works</h2>
+
+    <h3>11. Restore one file</h3>
+    <p>A backup you have never restored from is a hope, not a backup. In the Backups panel press <strong>Restore</strong>, choose <em>Latest</em>, choose one file, and restore it to a different folder such as <code>C:\RestoreTest</code>. Open it.</p>
+
+    <h3>12. Check the server sees it</h3>
+    <p>In the server's console, the <strong>Fleet</strong> page should list the PC with a recent backup and the status <em>ok</em>.</p>
+
+    <h3>13. Get told when something fails</h3>
+    <p>In the server's console go to <strong>Settings → Email alerts</strong>, enter your mail account's details, save, and press <strong>Send test email</strong>. Without this, a backup that stops is only visible to someone who looks.</p>
+
+    <h2>Then</h2>
+    <ul>
+      <li>Repeat steps 5 to 10 on each PC, with a new token and a different Client ID each time.</li>
+      <li>After {{trial_days}} days, more than {{free_machines}} PCs need a <a href="/pricing">licence</a>.</li>
+      <li>Keep a second copy of the server's storage folder on another disk. BackupMate protects your PCs; this protects BackupMate.</li>
+    </ul>
+
+    <h2>If something does not work</h2>
+    <table>
+      <tr><th>What you see</th><th>What to check</th></tr>
+      <tr><td>Scan finds no server</td><td>Both machines are on the same network; then use <strong>Connect…</strong> and type the addresses.</td></tr>
+      <tr><td>Connect fails or times out</td><td>The firewall rules in step 3, and that you can reach the server by the name or address you typed.</td></tr>
+      <tr><td>"Token already used"</td><td>Each token connects one PC once. Create another in step 5.</td></tr>
+      <tr><td>Certificate error on Connect</td><td>The <code>ca.pem</code> on the PC is the one from this server, and the path is typed correctly.</td></tr>
+      <tr><td>A file was skipped</td><td>The backup carries on and names the file. Antivirus blocking it is the usual cause.</td></tr>
+    </table>
+    <p>Still stuck? <a href="/contact">Write to us</a> with a diagnostics file from the PC and one from the server.</p>
+  </div>
+</section>

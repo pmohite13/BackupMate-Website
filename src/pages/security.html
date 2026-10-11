@@ -1,0 +1,56 @@
+title: Security
+description: How BackupMate protects your backups: encryption before upload, certificates for every PC, a 30-day recycle bin against ransomware, and exactly what does and does not leave your network.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <h1>Security</h1>
+    <p class="lead">A backup product holds a copy of everything you care about. This page says how that copy is protected, what choices you make, and where the protection stops.</p>
+
+    <h2>Where your data lives</h2>
+    <p>On your server, in your office, on a disk you own. BackupMate has no cloud service. We never receive your files, your file names, your computers' names or your encryption keys, and we have no way to obtain them.</p>
+
+    <h2>Encryption</h2>
+    <p>Each PC encrypts its files with AES-256 <strong>before</strong> sending them, using a passphrase you choose when you connect it. What arrives at the server is already encrypted, and the connection it travels over is encrypted again with TLS.</p>
+    <p>BackupMate uses <a href="https://kopia.io" rel="noopener">Kopia</a>, a widely used open-source backup engine, for storage and encryption. We did not write our own cryptography.</p>
+
+    <h2>Who holds the key: your choice</h2>
+    <table>
+      <tr><th></th><th>You hold the key (default)</th><th>The server holds a copy</th></tr>
+      <tr><th>Who can read the backups</th><td>Only someone with the passphrase</td><td>Also the server's administrator</td></tr>
+      <tr><th>Passphrase forgotten</th><td>The backups cannot be opened by anyone, including us</td><td>The administrator can still recover the files</td></tr>
+      <tr><th>The PC is lost or dead</th><td>Possible only with the passphrase</td><td>Recover from the server directly</td></tr>
+      <tr><th>Suits</th><td>Personal machines; maximum privacy</td><td>Company-owned machines, where the files belong to the business</td></tr>
+    </table>
+    <div class="note warn"><p><strong>With the default, a lost passphrase means lost backups.</strong> That is what makes it private, and nobody can undo it. Keep the passphrase in a password manager, or choose the second mode.</p></div>
+
+    <h2>Only your PCs can connect</h2>
+    <p>The server runs its own private certificate authority. Adding a PC issues it a certificate, using a one-time code that you create in the server's console. From then on the server and the PC prove who they are to each other on every connection, and anything without a certificate is refused, including for the stored backups.</p>
+
+    <h2>Ransomware and deleted backups</h2>
+    <p>The usual way a backup is lost to ransomware is that the infected PC is allowed to delete it. In BackupMate, nothing a PC deletes or overwrites on the server is gone at once. It is moved to a recycle bin that only the server controls, and kept for 30 days. If backups go missing, an administrator puts back everything deleted in the last so many hours with one button.</p>
+    <p>This protects the backups against a compromised <em>PC</em>. It does not protect them against someone who takes control of the <em>server itself</em>. For that, keep a second copy of the server's storage somewhere the server cannot reach: a disk you swap weekly, or another machine.</p>
+
+    <h2>What BackupMate sends over the internet</h2>
+    <p>One thing, and you can switch it off.</p>
+    <p>Once a day the <strong>server</strong> fetches a small public file from this website to learn the latest version number, so that it can tell you when an update exists. That request carries nothing about you: no server ID, no licence, no count or names of computers, not even the version you are running. It downloads and installs nothing. The setting is under Settings → Support in the server's console.</p>
+    <p>The PCs never contact the internet. There is no telemetry, no usage reporting and no licence check that phones home; a licence is verified by the server on its own.</p>
+
+    <h2>Diagnostics</h2>
+    <p>When you ask us for help, you can export a diagnostics file from the console and send it to us. It contains the version, the log, the settings and the names of the folders being backed up. It does not contain passwords, encryption keys, enrolment codes or the contents of any file. It is sent only if you send it.</p>
+
+    <h2>What is recorded</h2>
+    <p>Recovering someone's files, deleting a machine's backups, changing who may connect, switching the update check: each is written to the Windows Event Log on the server with the administrator's name and the time.</p>
+
+    <h2>Limits you should know</h2>
+    <ul>
+      <li><strong>One office, one building.</strong> Fire, flood or theft that takes the server takes the backups, unless you keep a second copy elsewhere.</li>
+      <li><strong>The server is trusted.</strong> Anyone with administrator access to the server machine can stop the service or remove its disk. Treat it like the safe it is.</li>
+      <li><strong>Every enrolled PC can reach the shared storage.</strong> PCs back up into one shared store, which is what lets identical files be stored once. Encryption and the recycle bin are what protect one PC's data from another, not separate storage.</li>
+      <li><strong>The installers are not yet code-signed.</strong> Check the published SHA-256 on the <a href="/download">download page</a> until they are.</li>
+      <li><strong>Do not expose it to the internet.</strong> BackupMate is built for a private network. Do not forward its ports through your router.</li>
+    </ul>
+
+    <h2>Reporting a security problem</h2>
+    <p>Write to <a href="mailto:{{support_email}}">{{support_email}}</a> with "Security" in the subject. Please give us a reasonable time to fix a problem before making it public. We reply to every report.</p>
+  </div>
+</section>

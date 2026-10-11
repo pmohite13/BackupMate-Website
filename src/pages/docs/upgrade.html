@@ -1,0 +1,37 @@
+title: Upgrading
+description: How to upgrade BackupMate to a newer version without losing settings or backups.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/docs/">Guides</a> › Upgrading</p>
+    <h1>Upgrading</h1>
+    <p class="lead">Run the new installer over the old one. Settings, connections and backups are all kept. Nothing needs uninstalling or deleting.</p>
+
+    <h2>The order</h2>
+    <ol>
+      <li><strong>Server first.</strong> Download the new <code>BackupMateServer</code> installer and run it on the server. The service restarts by itself; PCs that were mid-backup carry on at their next run.</li>
+      <li><strong>Then each PC.</strong> Run the new <code>BackupMate</code> installer on each one. It does not need to be the same day.</li>
+    </ol>
+    <p>A PC on an older version normally keeps backing up to a newer server in the meantime. When a release needs every PC upgraded promptly, its notes on the download page say so.</p>
+
+    <h2>Knowing who is behind</h2>
+    <ul>
+      <li>The server's <strong>Fleet</strong> page shows the version each PC runs and marks any that are older than the server.</li>
+      <li>A PC that is behind says so in its own BackupMate window.</li>
+      <li>When a newer BackupMate is published, the server's console says so on the Fleet page and under Settings → Support. This needs the server to reach the internet once a day, and can be switched off there.</li>
+    </ul>
+
+    <h2>Do not</h2>
+    <ul>
+      <li><strong>Do not uninstall first.</strong> It is unnecessary, and deleting the data folder afterwards would disconnect the PC from its backups.</li>
+      <li><strong>Do not delete <code>C:\ProgramData\BackupMate</code>.</strong> On a PC it holds the connection to the server and the sealed passphrase. On the server it holds the certificate authority that every PC trusts, and by default the backups themselves.</li>
+      <li><strong>Do not install an older version over a newer one.</strong> The installer refuses.</li>
+    </ul>
+
+    <h2>Before upgrading the server</h2>
+    <p>It is good practice to have your second copy of the server's storage up to date first. Upgrades do not touch the stored backups, but the day you upgrade is a sensible day to check that copy exists.</p>
+
+    <h2>If something is wrong afterwards</h2>
+    <p>Export a diagnostics file from the PC or the server and <a href="/contact">send it to us</a>. It records the version and the log, which is what we need to see.</p>
+  </div>
+</section>

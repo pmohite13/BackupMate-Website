@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://backupmate.buzzneuron.com/sitemap.xml
