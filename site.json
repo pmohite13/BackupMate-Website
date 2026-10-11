@@ -1,0 +1,42 @@
+{
+  "_comment": "Every fact the site states about the business lives here, once. Edit this file, run `python build.py`, commit. Values marked CONFIRM are suggestions that have not been approved by the owner; empty strings are facts only the owner knows. `python build.py --strict` refuses to build while any are left.",
+
+  "product": "BackupMate",
+  "brand": "BuzzNeuron",
+  "site_url": "https://backupmate.buzzneuron.com",
+
+  "legal_name": "",
+  "legal_address": "",
+  "governing_city": "",
+  "grievance_officer": "",
+
+  "support_email": "pranay@buzzneuron.com",
+  "whatsapp_display": "+91 76004 53282",
+  "whatsapp_link": "https://wa.me/917600453282",
+  "support_hours": "CONFIRM Monday to Friday, 10:00 to 18:00 IST",
+  "support_response": "CONFIRM one business day",
+
+  "legal_updated": "11 October 2026",
+  "refund_days": "14",
+  "trial_days": "30",
+  "free_machines": "3",
+  "grace_days": "14",
+
+  "plans": [
+    { "machines": "5",  "inr": "4,999",  "usd": "79"  },
+    { "machines": "10", "inr": "8,999",  "usd": "139" },
+    { "machines": "25", "inr": "19,999", "usd": "299" },
+    { "machines": "50", "inr": "34,999", "usd": "499" }
+  ],
+
+  "checkout_live": false,
+
+  "release": {
+    "_comment": "Written by release.py. Do not edit by hand.",
+    "version": "",
+    "date": "",
+    "signed": false,
+    "client": { "url": "", "sha256": "", "size_mb": "" },
+    "server": { "url": "", "sha256": "", "size_mb": "" }
+  }
+}

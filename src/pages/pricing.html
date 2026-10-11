@@ -1,0 +1,52 @@
+title: Pricing
+description: BackupMate pricing: free for up to 3 PCs, then one yearly licence per office by number of PCs. 30-day full trial, 14-day refund, and restore always works.
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>Pricing</h1>
+    <p class="lead">One licence per server, by the number of PCs backing up to it, per year. The server software is free.
+    Start with every feature on any number of PCs for {{trial_days}} days; no card and no account are needed.</p>
+
+    <div class="plans">
+      <div class="plan free">
+        <h3>Up to {{free_machines}} PCs</h3>
+        <div class="price">Free</div>
+        <div class="per">for as long as you like · no support</div>
+        <a class="btn" href="/download">Download</a>
+      </div>
+      {{#plans}}<div class="plan">
+        <h3>{{machines}} PCs</h3>
+        <div class="price">₹{{inr}}</div>
+        <div class="per">per year · ${{usd}} outside India</div>
+        <a class="btn primary" href="/contact?plan={{machines}}">Buy</a>
+      </div>
+      {{/plans}}
+    </div>
+    <p class="small">Prices in India exclude GST, which is added on the invoice. More than 50 PCs, several offices, or you look after other people's offices? <a href="/contact">Ask us for a quote</a>.</p>
+    {{^checkout_live}}<div class="note"><p><strong>Buying today.</strong> Online checkout is being set up. For now, <a href="/contact">write to us</a> with the number of PCs and your server's ID, and we send a payment request and then your licence. It usually takes a few hours on a working day.</p></div>{{/checkout_live}}
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap narrow">
+    <h2>What every plan includes</h2>
+    <ul>
+      <li>Every feature. Nothing is reserved for larger plans.</li>
+      <li>All updates released while your licence is in force.</li>
+      <li>On paid plans: help by email and WhatsApp, {{support_hours}}. We aim to reply within {{support_response}}.</li>
+      <li>A proper invoice, with your GSTIN on it if you give us one.</li>
+    </ul>
+
+    <h2 style="margin-top:36px">What happens when</h2>
+    <details><summary>The {{trial_days}}-day trial ends</summary><p>Up to {{free_machines}} PCs carry on backing up for free, for as long as you like. PCs beyond that stop taking new backups until you install a licence. Everything already backed up stays where it is and can be restored.</p></details>
+    <details><summary>My licence expires</summary><p>It keeps working for a further {{grace_days}} days, and the console tells you well before then. After that the server goes back to the free plan: the first {{free_machines}} PCs carry on, the rest pause. Restoring files is never affected, and nothing is deleted.</p></details>
+    <details><summary>I add more PCs</summary><p>Write to us and pay the difference for the rest of your year. Your new licence replaces the old one; nothing is reinstalled.</p></details>
+    <details><summary>I replace a PC</summary><p>Retire the old one in the console and its place is free for the new one straight away. The old PC's backups stay on the server and can still be recovered.</p></details>
+    <details><summary>I replace the server</summary><p>A licence is issued for one server. If you move to new hardware, write to us and we reissue it at no charge.</p></details>
+    <details><summary>I change my mind</summary><p>Ask within {{refund_days}} days of your first purchase and we refund it in full. See the <a href="/legal/refund">refund policy</a>.</p></details>
+
+    <h2 style="margin-top:36px">How a licence works</h2>
+    <p>Your server shows a Server ID under Settings. Send it to us with your order and we send back a licence: a short block of text you paste into the same page. That is all. The server checks it by itself, so it works on a network with no internet connection, and it never contacts us.</p>
+    <p class="small">The full terms are in the <a href="/legal/eula">licence agreement</a> and the <a href="/legal/terms">terms of sale</a>.</p>
+  </div>
+</section>

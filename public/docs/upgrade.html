@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Upgrading · BackupMate</title>
+<meta name="description" content="How to upgrade BackupMate to a newer version without losing settings or backups.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/docs/upgrade">
+<meta property="og:title" content="Upgrading · BackupMate">
+<meta property="og:description" content="How to upgrade BackupMate to a newer version without losing settings or backups.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/docs/upgrade">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/docs/">Guides</a> › Upgrading</p>
+    <h1>Upgrading</h1>
+    <p class="lead">Run the new installer over the old one. Settings, connections and backups are all kept. Nothing needs uninstalling or deleting.</p>
+
+    <h2>The order</h2>
+    <ol>
+      <li><strong>Server first.</strong> Download the new <code>BackupMateServer</code> installer and run it on the server. The service restarts by itself; PCs that were mid-backup carry on at their next run.</li>
+      <li><strong>Then each PC.</strong> Run the new <code>BackupMate</code> installer on each one. It does not need to be the same day.</li>
+    </ol>
+    <p>A PC on an older version normally keeps backing up to a newer server in the meantime. When a release needs every PC upgraded promptly, its notes on the download page say so.</p>
+
+    <h2>Knowing who is behind</h2>
+    <ul>
+      <li>The server's <strong>Fleet</strong> page shows the version each PC runs and marks any that are older than the server.</li>
+      <li>A PC that is behind says so in its own BackupMate window.</li>
+      <li>When a newer BackupMate is published, the server's console says so on the Fleet page and under Settings → Support. This needs the server to reach the internet once a day, and can be switched off there.</li>
+    </ul>
+
+    <h2>Do not</h2>
+    <ul>
+      <li><strong>Do not uninstall first.</strong> It is unnecessary, and deleting the data folder afterwards would disconnect the PC from its backups.</li>
+      <li><strong>Do not delete <code>C:\ProgramData\BackupMate</code>.</strong> On a PC it holds the connection to the server and the sealed passphrase. On the server it holds the certificate authority that every PC trusts, and by default the backups themselves.</li>
+      <li><strong>Do not install an older version over a newer one.</strong> The installer refuses.</li>
+    </ul>
+
+    <h2>Before upgrading the server</h2>
+    <p>It is good practice to have your second copy of the server's storage up to date first. Upgrades do not touch the stored backups, but the day you upgrade is a sensible day to check that copy exists.</p>
+
+    <h2>If something is wrong afterwards</h2>
+    <p>Export a diagnostics file from the PC or the server and <a href="/contact">send it to us</a>. It records the version and the log, which is what we need to see.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 [legal name to be confirmed]. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>

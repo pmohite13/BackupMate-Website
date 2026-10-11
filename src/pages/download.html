@@ -1,0 +1,60 @@
+title: Download
+description: Download BackupMate for Windows: the server installer and the client installer, with SHA-256 checksums. Free for up to 3 PCs.
+---
+<section class="hero">
+  <div class="wrap narrow">
+    <h1>Download BackupMate</h1>
+    {{?release_version}}
+    <p class="lead">Version {{release_version}}, released {{release_date}}. Two installers: one for the machine that will hold the backups, one for each PC you want protected.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>1. Server</h3>
+        <p>Install on one PC that stays on and has spare disk space.</p>
+        <p><a class="btn primary" href="{{release_server_url}}">BackupMateServer {{release_version}} ({{release_server_size_mb}} MB)</a></p>
+        <p class="small">SHA-256<br><span class="sum">{{release_server_sha256}}</span></p>
+      </div>
+      <div class="card">
+        <h3>2. Client</h3>
+        <p>Install on every PC whose files you want backed up.</p>
+        <p><a class="btn primary" href="{{release_client_url}}">BackupMate {{release_version}} ({{release_client_size_mb}} MB)</a></p>
+        <p class="small">SHA-256<br><span class="sum">{{release_client_sha256}}</span></p>
+      </div>
+    </div>
+
+    <p style="margin-top:22px">Then follow the <a href="/docs/quick-start">quick-start guide</a>. It takes about fifteen minutes for the first PC.</p>
+
+    {{^release_signed}}<div class="note warn"><p><strong>Windows will warn you about these installers.</strong> They are not yet signed with a code-signing certificate, so Windows SmartScreen shows "Windows protected your PC". Choose <em>More info</em>, then <em>Run anyway</em>. Signing is in progress; until then, check the SHA-256 below against the file you downloaded so you know it is the one we published.</p></div>{{/release_signed}}
+    {{/release_version}}
+    {{^release_version}}
+    <p class="lead">The installers are being prepared for download. <a href="/contact">Write to us</a> and we will send them to you today.</p>
+    {{/release_version}}
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap narrow">
+    <h2>What you need</h2>
+    <ul>
+      <li><strong>Windows, 64-bit</strong>, on the server and on each PC: Windows 10 or 11, or Windows Server 2016 or later.</li>
+      <li><strong>Disk space on the server</strong> for the backups. As a starting point, allow as much as the files you are protecting; it grows slowly after that because only changes are stored.</li>
+      <li><strong>The same network.</strong> The PCs reach the server over your office LAN or Wi-Fi. Nothing needs opening to the internet, and nothing should be.</li>
+      <li><strong>Administrator rights</strong> to run the installers.</li>
+    </ul>
+
+    {{?release_version}}
+    <h2 style="margin-top:36px">Checking your download</h2>
+    <p>To confirm a file is exactly the one published here, open PowerShell in the folder you saved it to and run:</p>
+<pre><code>Get-FileHash .\BackupMateServer-{{release_version}}.msi -Algorithm SHA256</code></pre>
+    <p>The result should match the SHA-256 printed above, letter for letter. If it does not, do not install it; download it again, and <a href="/contact">tell us</a> if it still differs.</p>
+
+    {{/release_version}}
+    <h2 style="margin-top:36px">Upgrading</h2>
+    <p>Run the new installer over the old one. Nothing needs uninstalling and your settings and backups are kept. Upgrade the server first, then each PC. <a href="/docs/upgrade">More on upgrading</a>.</p>
+
+    <h2 style="margin-top:36px">Installing on many PCs</h2>
+    <p>Both installers run silently for deployment tools. See the <a href="/docs/silent-install">silent install guide</a>.</p>
+
+    <p class="small" style="margin-top:28px">By installing BackupMate you accept the <a href="/legal/eula">licence agreement</a>. BackupMate includes open-source components, listed with their licences in the file THIRD-PARTY-NOTICES.txt installed with it.</p>
+  </div>
+</section>

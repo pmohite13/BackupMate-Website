@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Restoring files · BackupMate</title>
+<meta name="description" content="How to restore a file, a folder or everything with BackupMate, from the PC or from the server.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/docs/restore">
+<meta property="og:title" content="Restoring files · BackupMate">
+<meta property="og:description" content="How to restore a file, a folder or everything with BackupMate, from the PC or from the server.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/docs/restore">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/docs/">Guides</a> › Restoring files</p>
+    <h1>Restoring files</h1>
+    <p class="lead">Restoring never needs a licence and never changes your backups. If in doubt, restore to a different folder first and look at what you got.</p>
+
+    <h2>On the PC the files came from</h2>
+    <ol>
+      <li>Click the BackupMate icon by the clock and choose <strong>Open BackupMate</strong>.</li>
+      <li>In the Backups panel, press <strong>Restore</strong> on the backup that held the files.</li>
+      <li>Choose a <strong>restore point</strong>. They are grouped by day, with the newest marked <em>Latest</em>. To get back something deleted last week, pick a day before it was deleted.</li>
+      <li>Choose <strong>everything</strong>, or <strong>Choose files and folders</strong> and tick what you want.</li>
+      <li>Choose <strong>where to put it</strong>. A new, empty folder is the safe choice; you can then copy what you need into place.</li>
+      <li>Press <strong>Restore</strong>. You can close the window while it runs and reopen it to see progress.</li>
+    </ol>
+    <div class="note"><p>Restoring over the original location replaces the files that are there now with the older copies. If you are not certain that is what you want, restore somewhere else.</p></div>
+
+    <h2>From the server, when the PC is broken, lost or wiped</h2>
+    <p>This is available when your server keeps a copy of the encryption keys (see <a href="/security">Who holds the key</a>). The server's Recover page says plainly if it is not available on your server, and why.</p>
+    <ol>
+      <li>On the server, open <strong>BackupMate Admin Console</strong> and go to <strong>Recover</strong>.</li>
+      <li>Find the machine and press <strong>Recover files…</strong></li>
+      <li>Choose the point in time, then everything or particular files and folders.</li>
+      <li>Press <strong>Prepare download</strong>. When it is ready, press <strong>Download</strong>. Several files arrive as one zip.</li>
+    </ol>
+    <ul>
+      <li>Nothing is written to the broken PC and nothing on it changes.</li>
+      <li>The prepared files are an unencrypted copy, so the server deletes them after a short time. Download them promptly.</li>
+      <li>Every recovery is recorded in the server's Event Log with your name, the machine and the point in time.</li>
+    </ul>
+
+    <h2>If the server does not hold the keys</h2>
+    <p>Then the files can only be opened with the passphrase chosen when that PC was connected. <a href="/contact">Write to us</a> and we will take you through recovering onto a replacement PC. Without the passphrase, nobody can open them.</p>
+
+    <h2>If backups themselves have gone missing</h2>
+    <p>If restore points you expect are not listed, they may have been deleted, by mistake or by malware on one of the PCs. The server keeps deleted backup data for 30 days.</p>
+    <ol>
+      <li>In the server's console go to <strong>Settings → Storage and protection → Deleted backup data</strong>.</li>
+      <li>Enter how many hours back to go, to a time when things were still right, and press <strong>Put deleted data back</strong>.</li>
+    </ol>
+    <p>Then find out what deleted them before anything else, and <a href="/contact">tell us</a>; we will help.</p>
+
+    <h2>Practise</h2>
+    <p>Restore one file every month or so, from a different PC each time. It takes two minutes and is the only real proof that your backups work.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 [legal name to be confirmed]. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>
