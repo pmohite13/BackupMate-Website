@@ -4,7 +4,7 @@
     python release.py 0.4.11 ^
         --client C:\\BackupMate\\dist\\BackupMate.msi ^
         --server C:\\BackupMate\\dist\\BackupMateServer.msi ^
-        --base-url https://downloads.buzzneuron.com/0.4.11
+        --base-url https://backupmate-downloads.buzzneuron.com/0.4.11
 
 Then `python build.py --strict` and commit.
 

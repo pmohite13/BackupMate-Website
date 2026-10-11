@@ -1,20 +1,18 @@
 {
-  "_comment": "Every fact the site states about the business lives here, once. Edit this file, run `python build.py`, commit. Values marked CONFIRM are suggestions that have not been approved by the owner; empty strings are facts only the owner knows. `python build.py --strict` refuses to build while any are left.",
+  "_comment": "Every fact the site states about the business lives here, once. Edit this file, run `python build.py`, commit. A value starting with CONFIRM is a suggestion the owner has not approved; an empty one is a fact only the owner knows. `python build.py --strict` refuses to build while either is left.",
 
   "product": "BackupMate",
   "brand": "BuzzNeuron",
   "site_url": "https://backupmate.buzzneuron.com",
 
-  "legal_name": "",
-  "legal_address": "",
-  "governing_city": "",
-  "grievance_officer": "",
+  "legal_name": "Pranay Mohite",
+  "legal_address": "A-301, Earth Ambrosia, Sama-Savli Road, Vadodara 390008, Gujarat, India",
+  "governing_city": "Vadodara, Gujarat",
 
   "support_email": "pranay@buzzneuron.com",
   "whatsapp_display": "+91 76004 53282",
   "whatsapp_link": "https://wa.me/917600453282",
-  "support_hours": "CONFIRM Monday to Friday, 10:00 to 18:00 IST",
-  "support_response": "CONFIRM one business day",
+  "support_response": "48 business hours",
 
   "legal_updated": "11 October 2026",
   "refund_days": "14",

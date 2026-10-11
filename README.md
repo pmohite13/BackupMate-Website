@@ -35,10 +35,15 @@ python build.py --strict   # before publishing: refuses to build with gaps
 `site.json` has values that only the owner can supply. Until they are filled in,
 `build.py --strict` fails and the pages show an obvious gap.
 
-- `legal_name`, `legal_address`, `governing_city`, `grievance_officer`: empty.
-- `support_hours`, `support_response`: suggestions marked `CONFIRM`. Remove the
-  word once agreed; they are promises to customers.
-- No release recorded, so the download page offers nothing yet.
+All of them are filled in as of 11 October 2026. A value can be marked as an
+unapproved suggestion by starting it with `CONFIRM`; `--strict` then refuses.
+
+No release is recorded yet, so the download page says the installers are on
+their way. That does not stop the site being published.
+
+The site names no grievance officer, by the owner's decision. India's e-commerce
+rules ask sellers for one; whether they apply to this business is a question for
+the lawyer reviewing the legal pages.
 
 The legal pages (`src/pages/legal/`) are drafts written to be clear and fair.
 **They have not been reviewed by a lawyer.** Have that done before taking money.
@@ -61,7 +66,7 @@ the site is written, and serves `404.html` for anything missing.
 **The installers do not go in this repository.** Each is larger than Cloudflare
 Pages' 25 MB per-file limit. Put them in a Cloudflare R2 bucket (free at this
 size, no download charges) with a custom domain such as
-`downloads.buzzneuron.com`, in a folder per version.
+`backupmate-downloads.buzzneuron.com`, in a folder per version.
 
 ## Publishing a release
 
@@ -77,7 +82,7 @@ version there is newer than its own, sends its administrator to `/download`.
 3. Record the release, against the same files you uploaded:
 
    ```
-   python release.py 0.4.11 --client C:\BackupMate\dist\BackupMate.msi --server C:\BackupMate\dist\BackupMateServer.msi --base-url https://downloads.buzzneuron.com/0.4.11
+   python release.py 0.4.11 --client C:\BackupMate\dist\BackupMate.msi --server C:\BackupMate\dist\BackupMateServer.msi --base-url https://backupmate-downloads.buzzneuron.com/0.4.11
    ```
 
    Add `--signed` once the installers carry a code-signing signature; the

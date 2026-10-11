@@ -92,23 +92,31 @@ agreement limits the rights those licences give you.
 
 4. YOUR DATA AND YOUR RESPONSIBILITIES
 
-4.1 The software runs entirely on your own equipment and network. Your backups
-are stored on storage that you provide. We do not receive, hold or have access
-to your files, your backups, your passwords or your encryption keys, and the
+4.1 The software runs on your own equipment and network. Your backups are
+stored on storage that you provide. We do not receive, hold or have access to
+your files, your backups, your passwords or your encryption keys, and the
 software does not send them, or information about your use of it, to us.
 
-4.2 Your backups are encrypted. Unless your server is configured to manage the
+4.2 The one connection the software makes outside your network is this: once
+a day the server program requests a public file from our website to learn the
+number of the latest version, so that it can tell you when an update exists.
+That request contains no information that identifies you, your server, your
+licence or your computers. It downloads and installs nothing. You can switch
+it off in the server&#x27;s settings. The client program makes no connection
+outside your network.
+
+4.3 Your backups are encrypted. Unless your server is configured to manage the
 encryption key for you, the key is derived from a passphrase that only you hold.
 IF THAT PASSPHRASE IS LOST, THE BACKUPS CANNOT BE RECOVERED BY ANYBODY, INCLUDING
 US. Keeping it safe is your responsibility.
 
-4.3 You are responsible for: the equipment and storage the software runs on,
+4.4 You are responsible for: the equipment and storage the software runs on,
 including its reliability and free space; keeping the server&#x27;s data folder and
 its keys backed up; checking that backups are being taken and that files can be
 restored; and acting on the warnings the software gives you. A file the software
 reports as skipped has not been backed up.
 
-4.4 No backup software can guarantee that data will never be lost. You should
+4.5 No backup software can guarantee that data will never be lost. You should
 not rely on the software as your only protection for data whose loss you could
 not bear.
 
@@ -188,7 +196,7 @@ and on its website.</pre>
       <a href="/legal/eula">Licence agreement</a>
     </div>
   </div>
-  <div class="wrap small legal-line">© 2026 [legal name to be confirmed]. BackupMate is a product of BuzzNeuron.</div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
 </footer>
 </body>
 </html>

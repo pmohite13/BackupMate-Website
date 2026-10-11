@@ -32,8 +32,7 @@ SRC, OUT = ROOT / "src", ROOT / "public"
 
 # Facts only the owner knows. An empty one is shown on the page as an obvious
 # gap rather than left out, so that a draft cannot be mistaken for finished.
-REQUIRED = ["legal_name", "legal_address", "governing_city", "grievance_officer",
-            "support_email", "support_hours", "support_response"]
+REQUIRED = ["legal_name", "legal_address", "governing_city", "support_email", "support_response"]
 
 
 def load_config():
@@ -97,6 +96,7 @@ def read_page(path):
 def main():
     strict = "--strict" in sys.argv
     cfg, problems = load_config()
+    notes = []
     base = flatten(cfg)
     base["year"] = cfg["release"].get("date", "")[:4] or "2026"
     layout = (SRC / "layout.html").read_text(encoding="utf-8")
@@ -135,8 +135,11 @@ def main():
             sys.exit(f"release version {version!r} is not a version number")
         (OUT / "version.json").write_text(json.dumps({"version": version}) + "\n", encoding="utf-8", newline="\n")
     else:
-        problems.append("no release recorded: run release.py, or the download page offers nothing "
-                        "and version.json is not published")
+        # Not a reason to refuse: the site can go live before the installers do
+        # (a payment provider reviews the pages, not the downloads), and the
+        # download page says plainly that they are on their way.
+        notes.append("no release recorded: the download page offers nothing and version.json is not "
+                     "published. Run release.py when the installers are uploaded.")
 
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {cfg['site_url']}/sitemap.xml\n",
                                     encoding="utf-8", newline="\n")
@@ -152,6 +155,8 @@ def main():
         + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8", newline="\n")
 
     print(f"built {len(pages)} pages into {OUT}")
+    for n in notes:
+        print(f"  note: {n}")
     for p in problems:
         print(f"  {'ERROR' if strict else 'warning'}: {p}")
     if strict and problems:
