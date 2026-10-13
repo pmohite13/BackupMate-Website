@@ -40,23 +40,55 @@
       <li>Click the BackupMate icon by the clock and choose <strong>Open BackupMate</strong>.</li>
       <li>In the Backups panel, press <strong>Restore</strong> on the backup that held the files.</li>
       <li>Choose a <strong>restore point</strong>. They are grouped by day, with the newest marked <em>Latest</em>. To get back something deleted last week, pick a day before it was deleted.</li>
-      <li>Choose <strong>everything</strong>, or <strong>Choose files and folders</strong> and tick what you want.</li>
+      <li>Choose <strong>everything</strong>, or <strong>Choose files and folders</strong> and tick what you want. To find something without knowing where it was, type part of its name in the search box above the folders (see <a href="#search">Finding a file by name</a>).</li>
       <li>Choose <strong>where to put it</strong>. A new, empty folder is the safe choice; you can then copy what you need into place.</li>
-      <li>Press <strong>Restore</strong>. You can close the window while it runs and reopen it to see progress.</li>
+      <li>Choose what happens <strong>if a file already exists</strong> there (see below). If you are restoring into an empty folder it makes no difference.</li>
+      <li>Press <strong>Restore</strong>. A bar shows files and gigabytes done and the time remaining. You can close the window while it runs and reopen it to see progress.</li>
     </ol>
-    <div class="note"><p>Restoring over the original location replaces the files that are there now with the older copies. If you are not certain that is what you want, restore somewhere else.</p></div>
+
+    <h3>If a file already exists</h3>
+    <table>
+      <tr><th>Keep existing</th><td>The default. Files that are already in the folder are left exactly as they are; only what is missing is restored. Safe to use on a folder you are still working in.</td></tr>
+      <tr><th>Keep both</th><td>Nothing is replaced. Where a file already exists, the backed-up copy is put beside it with "(restored)" in its name, so you can compare the two.</td></tr>
+      <tr><th>Overwrite</th><td>Files that are there now are replaced with the backed-up copies. Use this to roll a folder back to how it was. It asks you to confirm, because it cannot be undone.</td></tr>
+    </table>
+
+    <h2 id="search">Finding a file by name</h2>
+    <p>Choose <strong>Choose files and folders</strong> and type in the search box above the folder tree. It looks through the whole restore point, not only the folder you have open.</p>
+    <table>
+      <tr><th>Type</th><th>Finds</th></tr>
+      <tr><td><code>invoice</code></td><td>Any file or folder with "invoice" in its name, in capitals or not</td></tr>
+      <tr><td><code>*.xlsx</code></td><td>Every Excel file. <code>*</code> stands for any letters, <code>?</code> for exactly one</td></tr>
+      <tr><td><code>2024/march</code></td><td>Anything whose folder path contains "2024/march"</td></tr>
+    </table>
+    <p>Tick what you want in the results. Clear the box to go back to the folders; what you ticked stays ticked. If the list says there are more matches than it is showing, type more of the name.</p>
+
+    <h2>Restoring a great deal at once</h2>
+    <p>A whole drive of hundreds of thousands of files takes time with any backup product: every file has to be created and written, however small. These make the most difference:</p>
+    <ul>
+      <li><strong>Get the urgent things first.</strong> Restore the folder you need today, then start the rest. Search helps here.</li>
+      <li><strong>Use a network cable.</strong> A restore is limited by the slowest link between the PC and the server, and Wi-Fi is usually it.</li>
+      <li><strong>Check your antivirus.</strong> It scans every file as it is written. Most antivirus products let you exclude a folder or a program from real-time scanning; excluding the folder you are restoring into for the duration can speed a large restore considerably. Remove the exclusion afterwards.</li>
+      <li><strong>Make sure there is room.</strong> BackupMate refuses a restore that plainly will not fit, and tells you how much it needs.</li>
+    </ul>
 
     <h2>From the server, when the PC is broken, lost or wiped</h2>
     <p>This is available when your server keeps a copy of the encryption keys (see <a href="/security">Who holds the key</a>). The server's Recover page says plainly if it is not available on your server, and why.</p>
     <ol>
       <li>On the server, open <strong>BackupMate Admin Console</strong> and go to <strong>Recover</strong>.</li>
       <li>Find the machine and press <strong>Recover files…</strong></li>
-      <li>Choose the point in time, then everything or particular files and folders.</li>
-      <li>Press <strong>Prepare download</strong>. When it is ready, press <strong>Download</strong>. Several files arrive as one zip.</li>
+      <li>Choose the point in time, then everything or particular files and folders. The same search box is there.</li>
+      <li>Choose <strong>where to put it</strong>:
+        <ul>
+          <li><strong>Prepare a download</strong> for a few files. When it is ready, press <strong>Download</strong>; several files arrive as one zip.</li>
+          <li><strong>Restore to a folder on this server</strong> for anything large. Type or browse to a folder the server can reach: another drive, a USB disk, a network share. The files are written straight into a new folder inside it, named for the machine and the time, so nothing already there is touched.</li>
+        </ul>
+      </li>
     </ol>
     <ul>
       <li>Nothing is written to the broken PC and nothing on it changes.</li>
-      <li>The prepared files are an unencrypted copy, so the server deletes them after a short time. Download them promptly.</li>
+      <li>A download is held on the server only for a short time, then deleted, because it is an unencrypted copy. Collect it promptly. If the server's own drive is short of room, use <em>Restore to a folder</em> instead, or move the staging folder under Settings → Recovery staging.</li>
+      <li>Files restored to a folder are yours to look after: the server never deletes them, and they are not encrypted.</li>
       <li>Every recovery is recorded in the server's Event Log with your name, the machine and the point in time.</li>
     </ul>
 
