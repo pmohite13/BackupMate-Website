@@ -1,40 +1,57 @@
 {
   "_comment": "Every fact the site states about the business lives here, once. Edit this file, run `python build.py`, commit. A value starting with CONFIRM is a suggestion the owner has not approved; an empty one is a fact only the owner knows. `python build.py --strict` refuses to build while either is left.",
-
   "product": "BackupMate",
   "brand": "BuzzNeuron",
   "site_url": "https://backupmate.buzzneuron.com",
-
   "legal_name": "Pranay Mohite",
   "legal_address": "Sama-Savli Road, Vadodara 390008, Gujarat, India",
   "governing_city": "Vadodara, Gujarat",
-
   "support_email": "pranay@buzzneuron.com",
   "whatsapp_display": "+91 76004 53282",
   "whatsapp_link": "https://wa.me/917600453282",
   "support_response": "48 business hours",
-
   "legal_updated": "11 October 2026",
   "refund_days": "14",
   "trial_days": "30",
   "free_machines": "3",
   "grace_days": "14",
-
   "plans": [
-    { "machines": "5",  "inr": "4,999",  "usd": "79"  },
-    { "machines": "10", "inr": "8,999",  "usd": "139" },
-    { "machines": "25", "inr": "19,999", "usd": "299" },
-    { "machines": "50", "inr": "34,999", "usd": "499" }
+    {
+      "machines": "5",
+      "inr": "4,999",
+      "usd": "79"
+    },
+    {
+      "machines": "10",
+      "inr": "8,999",
+      "usd": "139"
+    },
+    {
+      "machines": "25",
+      "inr": "19,999",
+      "usd": "299"
+    },
+    {
+      "machines": "50",
+      "inr": "34,999",
+      "usd": "499"
+    }
   ],
-
   "checkout_live": false,
-
   "release": {
     "_comment": "Written by release.py. Do not edit by hand.",
-    "version": "",
-    "date": "",
+    "version": "0.4.12",
+    "date": "2026-10-14",
     "signed": false,
-    "client": { "url": "", "sha256": "", "size_mb": "" },
-    "server": { "url": "", "sha256": "", "size_mb": "" }
+    "client": {
+      "url": "https://backupmate-downloads.buzzneuron.com/0.4.12/BackupMate-0.4.12.msi",
+      "sha256": "e35935b1079ac74d202fbe8714958327def361349af59e1aacee460695d14b3e",
+      "size_mb": "27.2"
+    },
+    "server": {
+      "url": "https://backupmate-downloads.buzzneuron.com/0.4.12/BackupMateServer-0.4.12.msi",
+      "sha256": "ae07b228d8d19eb61fd687df1a6668f4bfb7add47bf4bab7f27d352aa5e6b54b",
+      "size_mb": "25.7"
+    }
   }
 }
