@@ -1,0 +1,20 @@
+title: Windows says “Windows protected your PC”
+description: Why SmartScreen warns about the BackupMate installers and how to check the file is genuine.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Installing</p>
+    <h1>Windows says “Windows protected your PC”</h1>
+<p>When you run a BackupMate installer, Windows may show a blue box saying <em>Windows protected your PC</em>.</p>
+<h2>Why</h2>
+<p>The installers are not yet signed with a code-signing certificate, so Windows does not recognise who published them. It shows this for any unsigned program, not because anything is wrong with the file. Signing is in progress.</p>
+<h2>What to do</h2>
+<ol>
+  <li>Check the file is the one we published: compare its SHA-256 with the one on the <a href="/download">download page</a>. In PowerShell, in the folder you saved it to:
+<pre><code>Get-FileHash .\BackupMateServer-0.4.12.msi -Algorithm SHA256</code></pre>
+  It must match letter for letter. If it does not, do not run it; download it again.</li>
+  <li>Run the installer, choose <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+</ol>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>

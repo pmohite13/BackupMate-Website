@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PCs cannot reach the server · BackupMate</title>
+<meta name="description" content="Connect fails or times out: the server&#x27;s firewall, the address, and how to test the connection.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/help/firewall">
+<meta property="og:title" content="PCs cannot reach the server · BackupMate">
+<meta property="og:description" content="Connect fails or times out: the server&#x27;s firewall, the address, and how to test the connection.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/help/firewall">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/help/" aria-current="page">Help</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Installing</p>
+    <h1>PCs cannot reach the server</h1>
+<p>On a PC, <strong>Connect</strong> fails or times out, or backups say <em>The backup server could not be reached</em>.</p>
+<h2>Most often: the server's firewall</h2>
+<p>Windows Firewall on the server blocks incoming connections until told otherwise, and the installer does not change it. On the server, in PowerShell as administrator:</p>
+<pre><code>New-NetFirewallRule -DisplayName "BackupMate storage" -Direction Inbound -LocalPort 8443 -Protocol TCP -Action Allow -Profile Private,Domain
+New-NetFirewallRule -DisplayName "BackupMate control" -Direction Inbound -LocalPort 8444 -Protocol TCP -Action Allow -Profile Private,Domain</code></pre>
+<p>If your network is marked <em>Public</em> in Windows, change it to <em>Private</em> (Settings → Network → your connection), or the rules above do not apply.</p>
+<h2>Then check the address</h2>
+<ul>
+  <li>Use the server's computer name or its IP address, exactly as you would to open a shared folder on it.</li>
+  <li>From the PC, in PowerShell: <code>Test-NetConnection SERVER -Port 8444</code>. <em>TcpTestSucceeded : True</em> means the PC can reach it.</li>
+  <li>If it works by IP address but not by name, use the IP address, or fix the name in your router.</li>
+</ul>
+<h2>Still not working</h2>
+<p>Make sure the <strong>BackupMateServer</strong> service is running on the server (Services app), and that both machines are on the same network. Then <a href="/help/diagnostics">send us diagnostics</a> from both.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/help/">Answers to common problems</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>

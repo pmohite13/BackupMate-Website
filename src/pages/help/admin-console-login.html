@@ -1,0 +1,18 @@
+title: Opening the server's console: browser warning and password
+description: Why the browser warns about the console's certificate, and where the admin password is.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Installing</p>
+    <h1>Opening the server's console: browser warning and password</h1>
+<h2>The browser says the connection is not private</h2>
+<p>The server's console uses a certificate the server issued itself, which your browser does not know. The connection is still encrypted. Choose <em>Advanced</em>, then continue to the site. To stop the warning permanently, install the server's <code>ca.pem</code> as a trusted root certificate on the computers you open the console from.</p>
+<h2>The password</h2>
+<p>Sign in as <code>admin</code>. The password was generated when the server was installed and is in:</p>
+<pre><code>C:\ProgramData\BackupMate\Server\ca\admin-password.txt</code></pre>
+<p>Only an administrator on the server can open that file.</p>
+<h2>Opening it from another PC</h2>
+<p>The console is at <code>https://SERVER:8445</code>. Opening it from another computer also needs port 8445 allowed through the server's firewall, as in <a href="/help/firewall">PCs cannot reach the server</a>.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>

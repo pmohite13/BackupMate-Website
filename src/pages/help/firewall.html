@@ -1,0 +1,24 @@
+title: PCs cannot reach the server
+description: Connect fails or times out: the server's firewall, the address, and how to test the connection.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Installing</p>
+    <h1>PCs cannot reach the server</h1>
+<p>On a PC, <strong>Connect</strong> fails or times out, or backups say <em>The backup server could not be reached</em>.</p>
+<h2>Most often: the server's firewall</h2>
+<p>Windows Firewall on the server blocks incoming connections until told otherwise, and the installer does not change it. On the server, in PowerShell as administrator:</p>
+<pre><code>New-NetFirewallRule -DisplayName "BackupMate storage" -Direction Inbound -LocalPort 8443 -Protocol TCP -Action Allow -Profile Private,Domain
+New-NetFirewallRule -DisplayName "BackupMate control" -Direction Inbound -LocalPort 8444 -Protocol TCP -Action Allow -Profile Private,Domain</code></pre>
+<p>If your network is marked <em>Public</em> in Windows, change it to <em>Private</em> (Settings → Network → your connection), or the rules above do not apply.</p>
+<h2>Then check the address</h2>
+<ul>
+  <li>Use the server's computer name or its IP address, exactly as you would to open a shared folder on it.</li>
+  <li>From the PC, in PowerShell: <code>Test-NetConnection SERVER -Port 8444</code>. <em>TcpTestSucceeded : True</em> means the PC can reach it.</li>
+  <li>If it works by IP address but not by name, use the IP address, or fix the name in your router.</li>
+</ul>
+<h2>Still not working</h2>
+<p>Make sure the <strong>BackupMateServer</strong> service is running on the server (Services app), and that both machines are on the same network. Then <a href="/help/diagnostics">send us diagnostics</a> from both.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>

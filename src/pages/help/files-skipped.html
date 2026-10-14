@@ -1,0 +1,21 @@
+title: “Backed up, N files skipped”
+description: A backup succeeded but some files could not be read. Which ones, why, and what to do.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Backing up</p>
+    <h1>“Backed up, N files skipped”</h1>
+<p>A backup shows as backed up, with a note such as <em>3 files skipped because they could not be read</em>.</p>
+<h2>What it means</h2>
+<p>Everything else in the folder was backed up. The files named were not. BackupMate carries on past a file it cannot read, rather than failing the whole backup over it, and tells you which ones.</p>
+<h2>Why a file cannot be read</h2>
+<ul>
+  <li><strong>Antivirus blocked it.</strong> Most common: a file the antivirus has flagged or quarantined, often a download or an old installer. Check your antivirus's history.</li>
+  <li><strong>It is not yours to read.</strong> A file whose permissions shut out even the system account, such as one copied from another computer.</li>
+  <li><strong>It vanished.</strong> A temporary file deleted between being listed and being read. Harmless.</li>
+</ul>
+<h2>What to do</h2>
+<p>Press <strong>History</strong> on that backup to see the files named. If they matter, deal with the cause above and the next backup will include them. If they are junk, add them to <strong>Skip these</strong> under <strong>Edit</strong> so they stop being reported.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>

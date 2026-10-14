@@ -107,6 +107,12 @@ pre.eula { white-space: pre-wrap; font-family: inherit; font-size: 15px; backgro
 details { border-bottom: 1px solid var(--line); padding: 14px 0; }
 details summary { cursor: pointer; font-weight: 600; font-size: 17px; }
 details p { margin: 10px 0 0; color: var(--text-2); }
+/* The help index: each article's title, with what it answers beneath. */
+.kb { list-style: none; padding: 0; margin: 8px 0 18px; }
+.kb li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.kb li a { font-weight: 600; text-decoration: none; }
+.kb li a:hover { text-decoration: underline; }
+.kb li span { display: block; color: var(--text-2); font-size: 15px; margin-top: 2px; }
 .sum { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; overflow-wrap: anywhere; }
 
 /* --- footer ---------------------------------------------------------------- */

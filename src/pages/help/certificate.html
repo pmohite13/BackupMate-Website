@@ -1,0 +1,20 @@
+title: Certificate error when connecting a PC
+description: “Certificate signed by unknown authority” means the PC has the wrong ca.pem, or none.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Installing</p>
+    <h1>Certificate error when connecting a PC</h1>
+<p>Connecting a PC fails with an error mentioning a <em>certificate</em>, often <em>signed by unknown authority</em>.</p>
+<h2>Why</h2>
+<p>Each PC checks that it is talking to your server, and not something pretending to be it, using the file <code>ca.pem</code> from that server. The error means the PC was given the wrong file, an old one from a previous installation of the server, or a path that does not point at it.</p>
+<h2>What to do</h2>
+<ol>
+  <li>On the server, copy <code>C:\ProgramData\BackupMate\Server\ca\ca.pem</code> again (never <code>ca.key</code>, which sits beside it).</li>
+  <li>Put it on the PC, for example at <code>C:\ProgramData\BackupMate\ca.pem</code>.</li>
+  <li>Connect again, with that exact path in <strong>CA certificate file</strong>.</li>
+</ol>
+<p>If the server was reinstalled, its certificate changed, and every PC needs the new <code>ca.pem</code>.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>
