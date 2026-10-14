@@ -71,6 +71,10 @@ changed nothing.)
 To check a merge went live, look for a new entry on the Worker's Deployments
 page with the merge's commit, then load `/version.json`.
 
+Every other branch is built too, as a **preview** (`npx wrangler preview`, the
+"Previews Base" build settings): its own address, not the live site. Open a
+PR's preview to see a change before merging it.
+
 **The installers do not go in this repository.** Each is larger than the 25 MB
 per-file limit for static assets. Put them in a Cloudflare R2 bucket (free at this
 size, no download charges) with a custom domain such as
