@@ -52,19 +52,31 @@ When Paddle is added for sales outside India, its terms require the site to say
 that Paddle is the merchant of record for those sales; add that to the terms of
 sale and the refund policy at that point.
 
-## Hosting (Cloudflare Pages)
+## Hosting (Cloudflare Workers, static assets)
 
-1. In Cloudflare: Workers & Pages → Create → Pages → Connect to Git → this
-   repository.
-2. Build command: *(leave empty)*. Build output directory: `public`.
-3. Production branch: `main`.
-4. Custom domains → add `backupmate.buzzneuron.com`.
+The site is served by a Cloudflare Worker named `backupmate-web`, which holds
+the custom domain `backupmate.buzzneuron.com`. It is built from THIS repository:
 
-Cloudflare Pages serves `pricing.html` at `/pricing`, which is how every link on
-the site is written, and serves `404.html` for anything missing.
+- Worker → Settings → Build → Git repository: `pmohite13/BackupMate-Website`
+- Production branch: `main`. Build command: none. Deploy command:
+  `npx wrangler deploy`. Root directory: `/`.
 
-**The installers do not go in this repository.** Each is larger than Cloudflare
-Pages' 25 MB per-file limit. Put them in a Cloudflare R2 bucket (free at this
+`wrangler.jsonc` tells that deploy which Worker to update and that the site is
+in `public/`, with `/pricing` serving `pricing.html` and `404.html` for anything
+missing. Do not rename the Worker there: a different name deploys a different
+Worker, and the live site silently stops changing. (This happened once: the
+Worker was first connected to a one-off copy of this repository, so merges here
+changed nothing.)
+
+To check a merge went live, look for a new entry on the Worker's Deployments
+page with the merge's commit, then load `/version.json`.
+
+Every other branch is built too, as a **preview** (`npx wrangler preview`, the
+"Previews Base" build settings): its own address, not the live site. Open a
+PR's preview to see a change before merging it.
+
+**The installers do not go in this repository.** Each is larger than the 25 MB
+per-file limit for static assets. Put them in a Cloudflare R2 bucket (free at this
 size, no download charges) with a custom domain such as
 `backupmate-downloads.buzzneuron.com`, in a folder per version.
 

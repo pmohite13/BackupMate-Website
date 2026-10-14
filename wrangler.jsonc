@@ -1,0 +1,29 @@
+// How Cloudflare deploys this site. Read by `npx wrangler deploy`, which is the
+// deploy command of the Worker's Git build.
+//
+// It exists because without it the deploy guesses, and guessed wrong once:
+// with no config, wrangler names the Worker and finds the site by itself, and
+// the site went live from a one-off copy of this repository while merges here
+// changed nothing. Stating the name and the folder makes every build of `main`
+// update the one Worker that serves backupmate.buzzneuron.com.
+{
+  // The Worker that has the custom domain. Changing this deploys to a
+  // DIFFERENT Worker, and the live site stops updating.
+  "name": "backupmate-web",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    // The built site. build.py writes it; nothing is built on Cloudflare.
+    "directory": "./public",
+    // /pricing serves pricing.html, /docs/ serves docs/index.html: how every
+    // link on the site is written.
+    "html_handling": "auto-trailing-slash",
+    // Anything missing gets 404.html, with a 404 status.
+    "not_found_handling": "404-page"
+  },
+  // Branch previews. A build of any branch other than main runs
+  // `npx wrangler preview`, which refuses to run without this block, and
+  // publishes that branch at a preview address of its own -- so a change to
+  // the site can be looked at before it is merged and goes live. Empty because
+  // everything above applies to previews as it is.
+  "previews": {}
+}
