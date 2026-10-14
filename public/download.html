@@ -33,8 +33,27 @@
   <div class="wrap narrow">
     <h1>Download BackupMate</h1>
     
+    <p class="lead">Version 0.4.12, released 2026-10-14. Two installers: one for the machine that will hold the backups, one for each PC you want protected.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>1. Server</h3>
+        <p>Install on one PC that stays on and has spare disk space.</p>
+        <p><a class="btn primary" href="https://backupmate-downloads.buzzneuron.com/0.4.12/BackupMateServer-0.4.12.msi">BackupMateServer 0.4.12 (25.7 MB)</a></p>
+        <p class="small">SHA-256<br><span class="sum">ae07b228d8d19eb61fd687df1a6668f4bfb7add47bf4bab7f27d352aa5e6b54b</span></p>
+      </div>
+      <div class="card">
+        <h3>2. Client</h3>
+        <p>Install on every PC whose files you want backed up.</p>
+        <p><a class="btn primary" href="https://backupmate-downloads.buzzneuron.com/0.4.12/BackupMate-0.4.12.msi">BackupMate 0.4.12 (27.2 MB)</a></p>
+        <p class="small">SHA-256<br><span class="sum">e35935b1079ac74d202fbe8714958327def361349af59e1aacee460695d14b3e</span></p>
+      </div>
+    </div>
+
+    <p style="margin-top:22px">Then follow the <a href="/docs/quick-start">quick-start guide</a>. It takes about fifteen minutes for the first PC.</p>
+
+    <div class="note warn"><p><strong>Windows will warn you about these installers.</strong> They are not yet signed with a code-signing certificate, so Windows SmartScreen shows "Windows protected your PC". Choose <em>More info</em>, then <em>Run anyway</em>. Signing is in progress; until then, check the SHA-256 below against the file you downloaded so you know it is the one we published.</p></div>
     
-    <p class="lead">The installers are being prepared for download. <a href="/contact">Write to us</a> and we will send them to you today.</p>
     
   </div>
 </section>
@@ -48,6 +67,12 @@
       <li><strong>The same network.</strong> The PCs reach the server over your office LAN or Wi-Fi. Nothing needs opening to the internet, and nothing should be.</li>
       <li><strong>Administrator rights</strong> to run the installers.</li>
     </ul>
+
+    
+    <h2 style="margin-top:36px">Checking your download</h2>
+    <p>To confirm a file is exactly the one published here, open PowerShell in the folder you saved it to and run:</p>
+<pre><code>Get-FileHash .\BackupMateServer-0.4.12.msi -Algorithm SHA256</code></pre>
+    <p>The result should match the SHA-256 printed above, letter for letter. If it does not, do not install it; download it again, and <a href="/contact">tell us</a> if it still differs.</p>
 
     
     <h2 style="margin-top:36px">Upgrading</h2>
