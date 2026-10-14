@@ -1,0 +1,20 @@
+title: Scan does not find the server
+description: Scan uses network discovery, which some networks block. Connect by typing the address instead.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Installing</p>
+    <h1>Scan does not find the server</h1>
+<p>On a PC, <strong>Scan</strong> under <em>Backup servers</em> finds nothing.</p>
+<h2>Why</h2>
+<p>Scan uses network discovery (mDNS). Some routers and Wi-Fi access points block it, and it does not cross from one network segment to another. The server may also simply have been started a moment ago and not announced itself yet.</p>
+<h2>What to do</h2>
+<p>Press <strong>Connect…</strong> and type the addresses yourself:</p>
+<ul>
+  <li><strong>Control URL:</strong> <code>https://SERVER:8444</code></li>
+  <li><strong>Storage URL:</strong> <code>https://SERVER:8443</code></li>
+</ul>
+<p>where SERVER is the server's computer name or IP address. Scanning is only a shortcut; everything works the same without it. If typing the address fails as well, see <a href="/help/firewall">PCs cannot reach the server</a>.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>

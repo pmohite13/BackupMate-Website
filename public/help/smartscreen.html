@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Windows says “Windows protected your PC” · BackupMate</title>
+<meta name="description" content="Why SmartScreen warns about the BackupMate installers and how to check the file is genuine.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/help/smartscreen">
+<meta property="og:title" content="Windows says “Windows protected your PC” · BackupMate">
+<meta property="og:description" content="Why SmartScreen warns about the BackupMate installers and how to check the file is genuine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/help/smartscreen">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/help/" aria-current="page">Help</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Installing</p>
+    <h1>Windows says “Windows protected your PC”</h1>
+<p>When you run a BackupMate installer, Windows may show a blue box saying <em>Windows protected your PC</em>.</p>
+<h2>Why</h2>
+<p>The installers are not yet signed with a code-signing certificate, so Windows does not recognise who published them. It shows this for any unsigned program, not because anything is wrong with the file. Signing is in progress.</p>
+<h2>What to do</h2>
+<ol>
+  <li>Check the file is the one we published: compare its SHA-256 with the one on the <a href="/download">download page</a>. In PowerShell, in the folder you saved it to:
+<pre><code>Get-FileHash .\BackupMateServer-0.4.12.msi -Algorithm SHA256</code></pre>
+  It must match letter for letter. If it does not, do not run it; download it again.</li>
+  <li>Run the installer, choose <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+</ol>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/help/">Answers to common problems</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>

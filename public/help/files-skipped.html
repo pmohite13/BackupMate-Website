@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>“Backed up, N files skipped” · BackupMate</title>
+<meta name="description" content="A backup succeeded but some files could not be read. Which ones, why, and what to do.">
+<link rel="canonical" href="https://backupmate.buzzneuron.com/help/files-skipped">
+<meta property="og:title" content="“Backed up, N files skipped” · BackupMate">
+<meta property="og:description" content="A backup succeeded but some files could not be read. Which ones, why, and what to do.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backupmate.buzzneuron.com/help/files-skipped">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>BackupMate</a>
+    <nav aria-label="Main">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/help/" aria-current="page">Help</a>
+      <a href="/security">Security</a>
+      <a href="/contact">Contact</a>
+      <a class="cta" href="/download">Download</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › Backing up</p>
+    <h1>“Backed up, N files skipped”</h1>
+<p>A backup shows as backed up, with a note such as <em>3 files skipped because they could not be read</em>.</p>
+<h2>What it means</h2>
+<p>Everything else in the folder was backed up. The files named were not. BackupMate carries on past a file it cannot read, rather than failing the whole backup over it, and tells you which ones.</p>
+<h2>Why a file cannot be read</h2>
+<ul>
+  <li><strong>Antivirus blocked it.</strong> Most common: a file the antivirus has flagged or quarantined, often a download or an old installer. Check your antivirus's history.</li>
+  <li><strong>It is not yours to read.</strong> A file whose permissions shut out even the system account, such as one copied from another computer.</li>
+  <li><strong>It vanished.</strong> A temporary file deleted between being listed and being read. Harmless.</li>
+</ul>
+<h2>What to do</h2>
+<p>Press <strong>History</strong> on that backup to see the files named. If they matter, deal with the cause above and the next backup will include them. If they are junk, add them to <strong>Skip these</strong> under <strong>Edit</strong> so they stop being reported.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <strong>BackupMate</strong>
+      <p>Backup for the computers in your office, kept in your office.</p>
+      <p class="small">A product of BuzzNeuron.</p>
+    </div>
+    <div>
+      <strong>Product</strong>
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/download">Download</a>
+      <a href="/security">Security</a>
+      <a href="/faq">Questions</a>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <a href="/docs/quick-start">Quick start</a>
+      <a href="/docs/restore">Restoring files</a>
+      <a href="/docs/">All guides</a>
+      <a href="/help/">Answers to common problems</a>
+      <a href="/contact">Contact support</a>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <a href="/about">About</a>
+      <a href="/legal/terms">Terms of sale</a>
+      <a href="/legal/refund">Refund policy</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/eula">Licence agreement</a>
+    </div>
+  </div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+</footer>
+</body>
+</html>

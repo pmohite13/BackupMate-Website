@@ -1,0 +1,19 @@
+title: Email alerts are not arriving
+description: Settings that make alert emails work, including Gmail and Microsoft 365.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › The server</p>
+    <h1>Email alerts are not arriving</h1>
+<p>On the server: <strong>Settings → Email alerts</strong>. After saving, always press <strong>Send test email</strong>.</p>
+<h2>The usual causes</h2>
+<ul>
+  <li><strong>Port.</strong> Use <strong>587</strong>. Port 465 will not work: BackupMate starts a plain connection and upgrades it, which 465 does not allow.</li>
+  <li><strong>Password.</strong> Gmail and Microsoft 365 accounts with two-step verification need an <strong>app password</strong>, created in the account's security settings, not the account's normal password.</li>
+  <li><strong>Spam folder.</strong> Check it before changing anything else.</li>
+  <li><strong>Server.</strong> Gmail is <code>smtp.gmail.com</code>; Microsoft 365 is <code>smtp.office365.com</code>.</li>
+</ul>
+<p>The test reports exactly what the mail server said. Alerts are always written to the server's Event Log as well, whether email works or not.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+title: Reinstalling or upgrading the server
+description: What upgrading and reinstalling keep, and what must never be deleted.
+---
+<section class="prose">
+  <div class="wrap narrow">
+    <p class="crumbs"><a href="/help/">Help</a> › The server</p>
+    <h1>Reinstalling or upgrading the server</h1>
+<h2>Upgrading</h2>
+<p>Run the new installer over the old one. Everything is kept. See <a href="/docs/upgrade">Upgrading</a>.</p>
+<h2>Reinstalling</h2>
+<p>Uninstalling removes the programs and leaves <code>C:\ProgramData\BackupMate\Server</code> alone, deliberately. Installing again picks up where it left off: the same certificate, the same PCs, the same backups.</p>
+<h2>Never delete</h2>
+<ul>
+  <li><code>C:\ProgramData\BackupMate\Server</code>. It holds the certificate every PC trusts, the server's keys and its records. Deleting it disconnects every PC.</li>
+  <li>The storage folder, which holds the backups themselves.</li>
+</ul>
+<h2>Moving to new hardware</h2>
+<p><a href="/contact">Write to us</a> first. It is straightforward, but the order matters, and your licence needs reissuing for the new server.</p>
+    <p class="small" style="margin-top:36px">Not solved? <a href="/contact">Contact us</a>, and attach <a href="/help/diagnostics">diagnostics</a> if you can.</p>
+  </div>
+</section>

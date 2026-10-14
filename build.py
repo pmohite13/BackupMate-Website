@@ -119,7 +119,7 @@ def main():
                   "description_html": html.escape(meta["description"], quote=True)}
         # Which top-level section this page belongs to, for the highlighted link.
         section = url.strip("/").split("/")[0] or "home"
-        for name in ("home", "features", "pricing", "download", "docs", "security", "contact"):
+        for name in ("home", "features", "pricing", "download", "docs", "help", "security", "contact"):
             values[f"on_{name}"] = ' aria-current="page"' if section == name else ""
         content = render(body, values, cfg, rel)
         page = render(layout, {**values, "content": content}, cfg, rel)
