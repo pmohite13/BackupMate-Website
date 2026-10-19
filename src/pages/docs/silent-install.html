@@ -22,7 +22,7 @@ description: Install, upgrade and uninstall BackupMate silently with msiexec, fo
     </ul>
 
     <h2>What a silent install does and does not do</h2>
-    <p>It installs the software and starts the service. It does <strong>not</strong> connect a PC to your server: that still needs the server's addresses, its certificate, a one-time enrolment token and a passphrase, entered in the BackupMate window on that PC. See the <a href="/docs/quick-start">quick start</a>, steps 5 to 9.</p>
+    <p>It installs the software and starts the service. It does <strong>not</strong> connect a PC to your server: that needs a one-time enrolment code and a passphrase, entered in the BackupMate window on that PC. See the <a href="/docs/quick-start">quick start</a>, steps 5 to 8.</p>
     <p>If you are rolling out to many PCs and want the connection scripted as well, <a href="/contact">write to us</a>. It can be done with a prepared configuration, and we would rather set it up with you than have you guess at it.</p>
 
     <h2>What is installed where</h2>
@@ -34,7 +34,7 @@ description: Install, upgrade and uninstall BackupMate silently with msiexec, fo
     <p>Uninstalling removes the programs and the service. It leaves <code>C:\ProgramData\BackupMate</code> alone on purpose, so that reinstalling picks up where it left off and so that an uninstall can never be the thing that deletes your backups.</p>
 
     <h2>Firewall</h2>
-    <p>The client needs no inbound ports. The server needs TCP 8443 and 8444 open to the office network, and 8445 if you want to open its console from another machine. The installer does not change the firewall; see step 3 of the <a href="/docs/quick-start">quick start</a>.</p>
+    <p>The client needs no inbound ports. The server installer adds a Windows Firewall rule, <strong>BackupMate Server</strong>, that admits the server's ports (TCP 8443 storage, 8444 control, 8445 console) from the local subnet only. If your PCs are on a different subnet from the server, widen that rule's scope to include them.</p>
 
     <h2>Verifying the installers</h2>
     <p>Compare each file's SHA-256 with the one on the <a href="/download">download page</a> before deploying it:</p>

@@ -40,18 +40,18 @@
   "checkout_live": false,
   "release": {
     "_comment": "Written by release.py. Do not edit by hand.",
-    "version": "0.4.13",
-    "date": "2026-10-14",
+    "version": "0.4.14",
+    "date": "2026-10-19",
     "signed": false,
     "client": {
-      "url": "https://backupmate-downloads.buzzneuron.com/0.4.13/BackupMate-0.4.13.msi",
-      "sha256": "8f8987233cf759c9751ca57f4025c74cee7b0e175fc4a0c89ba0fea1f66d5cba",
+      "url": "https://backupmate-downloads.buzzneuron.com/0.4.14/BackupMate-0.4.14.msi",
+      "sha256": "6b7f08f170b067054a0b2eabfae9e5f81c6d3e60f2fc71f06bc218ece4aad530",
       "size_mb": "27.2"
     },
     "server": {
-      "url": "https://backupmate-downloads.buzzneuron.com/0.4.13/BackupMateServer-0.4.13.msi",
-      "sha256": "7c60c5e2420fe0c8ca2ff93fd28da67e1acbc71fa6feacd4330af353fa4848ce",
-      "size_mb": "25.7"
+      "url": "https://backupmate-downloads.buzzneuron.com/0.4.14/BackupMateServer-0.4.14.msi",
+      "sha256": "c608e5230a5c484dd546047a5b9d555ccbcb6af4e563f60ff5bd918368c4db95",
+      "size_mb": "25.9"
     }
   }
 }
