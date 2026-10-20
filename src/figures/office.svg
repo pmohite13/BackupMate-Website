@@ -1,0 +1,37 @@
+<svg class="fig fig-office" viewBox="0 0 640 300" role="img" aria-labelledby="fig-office-t fig-office-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-office-t">Five office PCs backing up to one server PC inside the same office</title>
+  <desc id="fig-office-d">A dashed boundary labelled "your office" encloses five desktop PCs on the left and one server PC on the right. Each PC is joined to the server by a line, and small blocks of data travel along the lines to the server. Nothing leaves the boundary.</desc>
+  <rect class="wall" x="12" y="24" width="616" height="252" rx="18"/>
+  <text class="lbl-strong" x="32" y="52">Your office</text>
+  <text class="lbl-muted" x="608" y="52" text-anchor="end">nothing leaves this line</text>
+  <g class="pcs">
+    <g transform="translate(52,80)"><rect class="box" width="64" height="42" rx="6"/><rect class="stand" x="24" y="46" width="16" height="4" rx="1"/><text class="lbl" x="32" y="70" text-anchor="middle">Reception</text></g>
+    <g transform="translate(52,170)"><rect class="box" width="64" height="42" rx="6"/><rect class="stand" x="24" y="46" width="16" height="4" rx="1"/><text class="lbl" x="32" y="70" text-anchor="middle">Accounts</text></g>
+    <g transform="translate(172,80)"><rect class="box" width="64" height="42" rx="6"/><rect class="stand" x="24" y="46" width="16" height="4" rx="1"/><text class="lbl" x="32" y="70" text-anchor="middle">Design</text></g>
+    <g transform="translate(172,170)"><rect class="box" width="64" height="42" rx="6"/><rect class="stand" x="24" y="46" width="16" height="4" rx="1"/><text class="lbl" x="32" y="70" text-anchor="middle">Owner</text></g>
+    <g transform="translate(292,125)"><rect class="box" width="64" height="42" rx="6"/><rect class="stand" x="24" y="46" width="16" height="4" rx="1"/><text class="lbl" x="32" y="70" text-anchor="middle">Laptop</text></g>
+  </g>
+  <g class="links">
+    <path d="M116 101 C 200 101, 380 150, 480 150"/>
+    <path d="M116 191 C 200 191, 380 150, 480 150"/>
+    <path d="M236 101 C 300 101, 400 150, 480 150"/>
+    <path d="M236 191 C 300 191, 400 150, 480 150"/>
+    <path d="M356 146 L 480 150"/>
+  </g>
+  <g class="packets">
+    <rect class="packet p1" x="-5" y="-5" width="10" height="10" rx="2"/>
+    <rect class="packet p2" x="-5" y="-5" width="10" height="10" rx="2"/>
+    <rect class="packet p3" x="-5" y="-5" width="10" height="10" rx="2"/>
+    <rect class="packet p4" x="-5" y="-5" width="10" height="10" rx="2"/>
+    <rect class="packet p5" x="-5" y="-5" width="10" height="10" rx="2"/>
+  </g>
+  <g transform="translate(482,104)">
+    <rect class="box server" width="88" height="92" rx="8"/>
+    <rect class="slot" x="12" y="14" width="64" height="14" rx="3"/>
+    <rect class="slot" x="12" y="36" width="64" height="14" rx="3"/>
+    <rect class="slot" x="12" y="58" width="64" height="14" rx="3"/>
+    <circle class="led" cx="70" cy="21" r="2.5"/>
+    <text class="lbl" x="44" y="112" text-anchor="middle">A PC you already own</text>
+    <text class="lbl-muted" x="44" y="128" text-anchor="middle">holds every backup</text>
+  </g>
+</svg>

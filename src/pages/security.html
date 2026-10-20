@@ -21,6 +21,10 @@ description: How BackupMate protects your backups: encryption before upload, cer
       <tr><th>The PC is lost or dead</th><td>Possible only with the passphrase</td><td>Recover from the server directly</td></tr>
       <tr><th>Suits</th><td>Personal machines; maximum privacy</td><td>Company-owned machines, where the files belong to the business</td></tr>
     </table>
+    <figure>
+      {{figure:keys}}
+      <figcaption>Who holds the key decides who can read the backups. By default only the PC does; a server that keeps a copy can recover files without the PC, and can read them.</figcaption>
+    </figure>
     <div class="note warn"><p><strong>With the default, a lost passphrase means lost backups.</strong> That is what makes it private, and nobody can undo it. Keep the passphrase in a password manager, or choose the second mode.</p></div>
 
     <h2>Only your PCs can connect</h2>
@@ -28,6 +32,10 @@ description: How BackupMate protects your backups: encryption before upload, cer
 
     <h2>Ransomware and deleted backups</h2>
     <p>The usual way a backup is lost to ransomware is that the infected PC is allowed to delete it. In BackupMate, nothing a PC deletes or overwrites on the server is gone at once. It is moved to a recycle bin that only the server controls, and kept for 30 days. If backups go missing, an administrator puts back everything deleted in the last so many hours with one button.</p>
+    <figure>
+      {{figure:recycle}}
+      <figcaption>A delete from a PC moves the data into a recycle bin only the server controls, where it stays for 30 days. An administrator puts it back with one button.</figcaption>
+    </figure>
     <p>This protects the backups against a compromised <em>PC</em>. It does not protect them against someone who takes control of the <em>server itself</em>. For that, keep a second copy of the server's storage somewhere the server cannot reach: a disk you swap weekly, or another machine.</p>
 
     <h2>What BackupMate sends over the internet</h2>

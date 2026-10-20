@@ -123,3 +123,89 @@ details p { margin: 10px 0 0; color: var(--text-2); }
 .foot a:hover { color: var(--accent); }
 .foot p { color: var(--text-2); margin-bottom: 6px; }
 .legal-line { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+/* --- figures and screenshots ---------------------------------------------- */
+/* Diagrams are inline SVG (src/figures) so their labels are text, and they
+   take their colours from the variables above, so dark mode needs no second
+   set of pictures. Motion is small, slow and optional: it shows the mechanism
+   (data travelling to the server) and stops entirely for anyone who has asked
+   their system for less motion. */
+figure { margin: 26px 0 18px; }
+figure.shot { margin-top: 22px; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; max-width: 46em; }
+.fig { display: block; width: 100%; height: auto; max-width: 640px; font-family: inherit; }
+.fig .lbl { font-size: 12px; fill: var(--text-2); }
+.fig .lbl-strong { font-size: 13px; font-weight: 600; fill: var(--text); }
+.fig .lbl-muted { font-size: 12px; fill: var(--muted); }
+.fig .lbl-on { font-size: 12px; font-weight: 600; fill: var(--on-accent); }
+.fig .wall { fill: var(--alt); stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.fig .panel { fill: var(--panel); stroke: var(--line); }
+.fig .box { fill: var(--panel); stroke: var(--line-strong); stroke-width: 1.5; }
+.fig .box.server { fill: var(--accent-soft); stroke: var(--accent); }
+.fig .server-bar { fill: var(--accent-soft); stroke: var(--accent); }
+.fig .stand, .fig .slot { fill: var(--line-strong); }
+.fig .slot { fill: var(--panel); stroke: var(--accent); }
+.fig .led { fill: var(--ok-text); }
+.fig .links path, .fig .link { fill: none; stroke: var(--line-strong); stroke-width: 1.5; }
+.fig .link.arrow { marker-end: none; stroke: var(--accent); }
+.fig .packet { fill: var(--accent); }
+.fig .doc { fill: var(--panel); stroke: var(--text-2); stroke-width: 1.2; }
+.fig .doc.big { stroke: var(--accent); }
+.fig .blk { fill: var(--line); }
+.fig .blk.changed { fill: var(--accent); }
+.fig .axis { stroke: var(--line-strong); stroke-width: 2; }
+.fig .pts circle { fill: var(--line-strong); }
+.fig .sel .ring { fill: none; stroke: var(--accent); stroke-width: 2; }
+.fig .sel .dot { fill: var(--accent); }
+.fig .sel line { stroke: var(--accent); stroke-width: 1.5; }
+.fig .sel .tag { fill: var(--accent); }
+.fig .key circle, .fig .key line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; }
+.fig .lock rect, .fig .lock path { fill: none; stroke: var(--text-2); stroke-width: 2; stroke-linejoin: round; }
+.fig .bin { fill: var(--accent); }
+.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.shot.narrow { max-width: 760px; }
+.hero .cols { display: grid; gap: 36px; grid-template-columns: 1.1fr 1fr; align-items: center; }
+.hero .cols figure { margin: 0; }
+@media (max-width: 820px) { .hero .cols { grid-template-columns: 1fr; } }
+
+/* Icons on cards: Lucide, inlined by build.py beside the card's heading. */
+.card .ic { width: 22px; height: 22px; color: var(--accent); display: block; margin-bottom: 10px; }
+
+/* The office figure: a block of data leaves each PC and arrives at the
+   server. The five run on offsets so the picture is never still and never
+   busy. The incremental figure lifts its two changed blocks onto the server
+   bar; the recycle figure drops a deleted block into the bin. */
+.fig-office .packet { offset-rotate: 0deg; animation: travel 6s linear infinite; }
+.fig-office .p1 { offset-path: path("M116 101 C 200 101, 380 150, 480 150"); }
+.fig-office .p2 { offset-path: path("M116 191 C 200 191, 380 150, 480 150"); animation-delay: -1.2s; }
+.fig-office .p3 { offset-path: path("M236 101 C 300 101, 400 150, 480 150"); animation-delay: -2.4s; }
+.fig-office .p4 { offset-path: path("M236 191 C 300 191, 400 150, 480 150"); animation-delay: -3.6s; }
+.fig-office .p5 { offset-path: path("M356 146 L 480 150"); animation-delay: -4.8s; }
+@keyframes travel { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 42% { offset-distance: 100%; opacity: 1; } 50% { offset-distance: 100%; opacity: 0; } 100% { offset-distance: 100%; opacity: 0; } }
+.fig-incremental .travel .packet { animation: lift 5s ease-in-out infinite; }
+.fig-incremental .travel .t2 { animation-delay: .4s; }
+@keyframes lift { 0%, 20% { transform: translateY(0); opacity: 0; } 30% { opacity: 1; } 60% { transform: translateY(96px); opacity: 1; } 75%, 100% { transform: translateY(96px); opacity: 0; } }
+.fig-recycle .fall { animation: fall 5s ease-in infinite; }
+@keyframes fall { 0%, 15% { transform: translateY(0); opacity: 0; } 25% { opacity: 1; } 55% { transform: translateY(42px); opacity: 1; } 70%, 100% { transform: translateY(42px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .fig * { animation: none !important; }
+  .fig-office .packet { offset-distance: 100%; opacity: 1; }
+  .fig-incremental .travel .packet { transform: translateY(96px); }
+  .fig-recycle .fall { transform: translateY(42px); }
+}
+
+/* A product screen drawn in HTML rather than photographed: crisp at any size,
+   a kilobyte, readable as text, and it follows dark mode. Used for the Connect
+   dialog on the home page. */
+.mock { max-width: 440px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .08); font-size: 14px; color: var(--text); }
+.mock h4 { margin: 0 0 6px; font-size: 16px; }
+.mock label { display: block; font-size: 12px; color: var(--muted); margin: 12px 0 4px; }
+.mock .field { border: 1px solid var(--line-strong); border-radius: 6px; padding: 7px 10px; background: var(--bg); min-height: 1.4em; }
+.mock .field.code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; overflow-wrap: anywhere; line-height: 1.5; }
+.mock .field.empty { color: var(--muted); }
+.mock .row { display: flex; gap: 8px; margin-top: 16px; }
+.mock .b { padding: 7px 16px; border-radius: 7px; border: 1px solid var(--line-strong); font-weight: 600; }
+.mock .b.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; }
+.figs { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 28px; }
+.figs figure { margin: 0; }

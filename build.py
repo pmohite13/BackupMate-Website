@@ -19,6 +19,12 @@ no build of its own.
 A page is a file under src/pages/. It starts with a few "key: value" lines, then
 a line of three dashes, then HTML. {{name}} is replaced from site.json (and from
 the page's own keys); {{#plans}}...{{/plans}} repeats for each plan.
+
+{{icon:name}} inlines src/assets/icons/name.svg (Lucide, ISC licence) and
+{{figure:name}} inlines src/figures/name.svg, so an icon or a diagram is part of
+the page rather than a request, and its text is in the HTML where a reader, a
+crawler or a video tool can find it. Nothing on the site is fetched from anyone
+else's server; the page-weight check below keeps that honest as pages grow.
 """
 import html
 import json
@@ -33,6 +39,40 @@ SRC, OUT = ROOT / "src", ROOT / "public"
 # Facts only the owner knows. An empty one is shown on the page as an obvious
 # gap rather than left out, so that a draft cannot be mistaken for finished.
 REQUIRED = ["legal_name", "legal_address", "governing_city", "support_email", "support_response"]
+
+# The most a page may weigh with everything it loads: its HTML, the stylesheet
+# and every local image it references. A product that promises nothing leaves
+# the building should not have a website that takes a megabyte to say so; the
+# sites compared when this was set ranged from 0.5 MB to 9 MB, almost all of it
+# decoration. Enforced in --strict rather than remembered.
+PAGE_BUDGET = 300 * 1024
+
+
+def inline_svg(kind, name, where):
+    """An icon or figure as markup. Icons are decorative beside a text label."""
+    folder = SRC / "assets" / "icons" if kind == "icon" else SRC / "figures"
+    path = folder / f"{name}.svg"
+    if not path.exists():
+        sys.exit(f"{where}: no {kind} named {name!r} in {folder}")
+    svg = path.read_text(encoding="utf-8").strip()
+    svg = re.sub(r"<!--.*?-->\s*", "", svg, flags=re.S)
+    if kind == "icon":
+        svg = svg.replace("<svg", '<svg aria-hidden="true" focusable="false"', 1)
+        svg = re.sub(r'\s+(width|height)="24"', "", svg)
+        svg = re.sub(r'class="lucide [^"]*"', 'class="ic"', svg)
+        svg = re.sub(r"\s*\n\s*", " ", svg)
+    return svg
+
+
+def page_weight(page_html, rel):
+    """Bytes a browser fetches for this page from this site: HTML, CSS, images."""
+    total = len(page_html.encode("utf-8")) + (SRC / "assets" / "site.css").stat().st_size
+    for ref in set(re.findall(r'src="/assets/([^"]+)"', page_html)):
+        asset = SRC / "assets" / ref
+        if not asset.exists():
+            sys.exit(f"{rel}: references /assets/{ref}, which does not exist")
+        total += asset.stat().st_size
+    return total
 
 
 def load_config():
@@ -79,6 +119,8 @@ def render(text, values, cfg, where):
     for _ in range(3):  # a few passes, so conditionals may nest
         text = re.sub(r"\{\{([?^])(\w+)\}\}(.*?)\{\{/\2\}\}", conditional, text, flags=re.S)
 
+    text = re.sub(r"\{\{(icon|figure):([\w-]+)\}\}", lambda m: inline_svg(m.group(1), m.group(2), where), text)
+
     def value(match):
         name = match.group(1)
         if name not in values:
@@ -103,7 +145,8 @@ def main():
 
     if OUT.exists():
         shutil.rmtree(OUT)
-    shutil.copytree(SRC / "assets", OUT / "assets")
+    # Icons are inlined, so they are not published as files.
+    shutil.copytree(SRC / "assets", OUT / "assets", ignore=shutil.ignore_patterns("icons"))
 
     pages = sorted((SRC / "pages").rglob("*.html"))
     for path in pages:
@@ -123,6 +166,8 @@ def main():
             values[f"on_{name}"] = ' aria-current="page"' if section == name else ""
         content = render(body, values, cfg, rel)
         page = render(layout, {**values, "content": content}, cfg, rel)
+        if (weight := page_weight(page, rel)) > PAGE_BUDGET:
+            problems.append(f"{rel} weighs {weight // 1024} KB with its images; the budget is {PAGE_BUDGET // 1024} KB")
         target = OUT / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(page, encoding="utf-8", newline="\n")

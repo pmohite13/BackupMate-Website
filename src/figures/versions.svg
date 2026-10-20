@@ -1,0 +1,23 @@
+<svg class="fig fig-versions" viewBox="0 0 520 150" role="img" aria-labelledby="fig-ver-t fig-ver-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-ver-t">Restore points over time, one selected</title>
+  <desc id="fig-ver-d">A timeline runs from a month ago to today. Restore points sit along it, close together for recent hours and days and spaced out further back. One point, Tuesday at two in the afternoon, is selected and labelled as the version to go back to.</desc>
+  <text class="lbl-strong" x="0" y="16">Restore points you can go back to</text>
+  <line class="axis" x1="10" y1="80" x2="510" y2="80"/>
+  <text class="lbl-muted" x="10" y="106" text-anchor="start">a month ago</text>
+  <text class="lbl-muted" x="510" y="106" text-anchor="end">today</text>
+  <g class="pts">
+    <circle cx="30" cy="80" r="4"/><circle cx="80" cy="80" r="4"/><circle cx="130" cy="80" r="4"/><circle cx="180" cy="80" r="4"/>
+    <circle cx="230" cy="80" r="4"/><circle cx="265" cy="80" r="4"/><circle cx="300" cy="80" r="4"/><circle cx="330" cy="80" r="4"/>
+    <circle cx="355" cy="80" r="4"/><circle cx="378" cy="80" r="4"/><circle cx="398" cy="80" r="4"/><circle cx="416" cy="80" r="4"/>
+    <circle cx="432" cy="80" r="4"/><circle cx="446" cy="80" r="4"/><circle cx="458" cy="80" r="4"/><circle cx="468" cy="80" r="4"/>
+    <circle cx="477" cy="80" r="4"/><circle cx="485" cy="80" r="4"/><circle cx="492" cy="80" r="4"/><circle cx="498" cy="80" r="4"/><circle cx="504" cy="80" r="4"/>
+  </g>
+  <g class="sel" transform="translate(378,80)">
+    <circle class="ring" r="9"/>
+    <circle class="dot" r="4.5"/>
+    <line x1="0" y1="-12" x2="0" y2="-30"/>
+    <rect class="tag" x="-64" y="-52" width="128" height="22" rx="5"/>
+    <text class="lbl-on" x="0" y="-37" text-anchor="middle">Tuesday, 2:00 PM</text>
+  </g>
+  <text class="lbl-muted" x="260" y="134" text-anchor="middle">24 hourly · 45 daily · 8 weekly · 12 monthly, and you decide the numbers</text>
+</svg>

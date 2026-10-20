@@ -1,0 +1,22 @@
+<svg class="fig fig-incremental" viewBox="0 0 520 180" role="img" aria-labelledby="fig-inc-t fig-inc-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-inc-t">After the first backup, only changed files are sent</title>
+  <desc id="fig-inc-d">A row of twenty blocks represents the files on a PC. Two are highlighted as changed since yesterday. Only those two travel to the server; the other eighteen stay where they are, already backed up.</desc>
+  <text class="lbl-strong" x="0" y="16">Files on the PC today</text>
+  <text class="lbl-muted" x="520" y="16" text-anchor="end">18 unchanged · 2 changed</text>
+  <g class="blocks" transform="translate(0,30)">
+    <rect class="blk" x="0" width="20" height="20" rx="3"/><rect class="blk" x="26" width="20" height="20" rx="3"/><rect class="blk" x="52" width="20" height="20" rx="3"/><rect class="blk" x="78" width="20" height="20" rx="3"/>
+    <rect class="blk" x="104" width="20" height="20" rx="3"/><rect class="blk" x="130" width="20" height="20" rx="3"/><rect class="blk changed c1" x="156" width="20" height="20" rx="3"/><rect class="blk" x="182" width="20" height="20" rx="3"/>
+    <rect class="blk" x="208" width="20" height="20" rx="3"/><rect class="blk" x="234" width="20" height="20" rx="3"/><rect class="blk" x="260" width="20" height="20" rx="3"/><rect class="blk" x="286" width="20" height="20" rx="3"/>
+    <rect class="blk" x="312" width="20" height="20" rx="3"/><rect class="blk" x="338" width="20" height="20" rx="3"/><rect class="blk" x="364" width="20" height="20" rx="3"/><rect class="blk changed c2" x="390" width="20" height="20" rx="3"/>
+    <rect class="blk" x="416" width="20" height="20" rx="3"/><rect class="blk" x="442" width="20" height="20" rx="3"/><rect class="blk" x="468" width="20" height="20" rx="3"/><rect class="blk" x="494" width="20" height="20" rx="3"/>
+  </g>
+  <g class="travel">
+    <rect class="packet t1" x="156" y="30" width="20" height="20" rx="3"/>
+    <rect class="packet t2" x="390" y="30" width="20" height="20" rx="3"/>
+  </g>
+  <g transform="translate(0,120)">
+    <rect class="box server-bar" x="0" y="0" width="520" height="44" rx="8"/>
+    <text class="lbl" x="14" y="27">On the server</text>
+    <text class="lbl-muted" x="506" y="27" text-anchor="end">yesterday's backup + today's 2 changed files</text>
+  </g>
+</svg>
