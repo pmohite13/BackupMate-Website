@@ -21,6 +21,20 @@ description: What BackupMate does: scheduled encrypted backups of Windows PCs to
       <div class="card"><h3>One bad file does not stop the rest</h3><p>If antivirus blocks a file, or one cannot be read, that file is skipped and reported by name. The other hundred thousand are still backed up.</p></div>
       <div class="card"><h3>You decide how far back</h3><p>Keep so many hourly, daily, weekly and monthly backups. The console spells out what your numbers mean before you save them.</p></div>
     </div>
+    <div class="figs">
+      <figure>
+        {{figure:incremental}}
+        <figcaption>After the first backup, only what changed is sent. Eighteen files that did not change cost nothing.</figcaption>
+      </figure>
+      <figure>
+        {{figure:dedup}}
+        <figcaption>The same file on three PCs is stored once on the server. Identical content anywhere in the office counts once.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      {{figure:versions}}
+      <figcaption>Restore points are close together for recent hours and days and spaced out further back, and you can go back to any of them.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -46,6 +60,16 @@ description: What BackupMate does: scheduled encrypted backups of Windows PCs to
       <div class="card"><h3>One page for every PC</h3><p>The server's console lists each computer, when it last backed up, which version it runs and whether it is overdue.</p></div>
       <div class="card"><h3>History on every backup</h3><p>Each PC shows its recent runs: what happened, how long it took, and the full reason when one failed. Intermittent problems show up here.</p></div>
       <div class="card"><h3>Errors written for people</h3><p>"The server cannot be reached; this PC will try again by itself" rather than a number. And what to do about it, when there is something to do.</p></div>
+    </div>
+    <div class="figs">
+      <figure class="shot">
+        <img src="/assets/img/server-fleet.png" width="1280" height="330" loading="lazy" alt="The server's Fleet page: a table of PCs with the last run, when it ran, the version each runs, and a green ok status.">
+        <figcaption>The server's Fleet page: every PC, when it last backed up, and whether it is overdue.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/img/client-history.png" width="1280" height="800" loading="lazy" alt="The History dialog for one backup on a PC: the last run succeeded, with how long it took, how many files were new and how much was uploaded.">
+        <figcaption>History on a PC: each run, how long it took, and the full reason when one failed.</figcaption>
+      </figure>
     </div>
   </div>
 </section>

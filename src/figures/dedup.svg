@@ -1,0 +1,19 @@
+<svg class="fig fig-dedup" viewBox="0 0 520 190" role="img" aria-labelledby="fig-dd-t fig-dd-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-dd-t">The same file on three PCs is stored once on the server</title>
+  <desc id="fig-dd-d">Three PCs each hold a copy of the same document. Lines from all three lead to one server, which holds a single copy labelled "stored once".</desc>
+  <g transform="translate(10,14)"><rect class="box" width="64" height="42" rx="6"/><rect class="doc" x="22" y="9" width="20" height="24" rx="2"/><text class="lbl" x="74" y="26">Reception</text></g>
+  <g transform="translate(10,74)"><rect class="box" width="64" height="42" rx="6"/><rect class="doc" x="22" y="9" width="20" height="24" rx="2"/><text class="lbl" x="74" y="26">Accounts</text></g>
+  <g transform="translate(10,134)"><rect class="box" width="64" height="42" rx="6"/><rect class="doc" x="22" y="9" width="20" height="24" rx="2"/><text class="lbl" x="74" y="26">Owner</text></g>
+  <text class="lbl-muted" x="150" y="186">quotation-template.docx, 2.4 MB, on every PC</text>
+  <g class="links">
+    <path d="M150 35 C 230 35, 300 95, 380 95"/>
+    <path d="M150 95 L 380 95"/>
+    <path d="M150 155 C 230 155, 300 95, 380 95"/>
+  </g>
+  <g transform="translate(382,49)">
+    <rect class="box server" width="88" height="92" rx="8"/>
+    <rect class="doc big" x="34" y="18" width="20" height="24" rx="2"/>
+    <text class="lbl-strong" x="44" y="66" text-anchor="middle">stored once</text>
+    <text class="lbl-muted" x="44" y="82" text-anchor="middle">2.4 MB, not 7.2</text>
+  </g>
+</svg>

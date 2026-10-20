@@ -10,6 +10,11 @@
 <meta property="og:description" content="What BackupMate does: scheduled encrypted backups of Windows PCs to your own server, restore from the PC or the server, email alerts, ransomware-resistant storage, and one console for the whole office.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://backupmate.buzzneuron.com/features">
+<meta property="og:image" content="https://backupmate.buzzneuron.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BackupMate: every PC in your office, backed up. Nothing leaves the building.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -50,6 +55,81 @@
       <div class="card"><h3>One bad file does not stop the rest</h3><p>If antivirus blocks a file, or one cannot be read, that file is skipped and reported by name. The other hundred thousand are still backed up.</p></div>
       <div class="card"><h3>You decide how far back</h3><p>Keep so many hourly, daily, weekly and monthly backups. The console spells out what your numbers mean before you save them.</p></div>
     </div>
+    <div class="figs">
+      <figure>
+        <svg class="fig fig-incremental" viewBox="0 0 520 180" role="img" aria-labelledby="fig-inc-t fig-inc-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-inc-t">After the first backup, only changed files are sent</title>
+  <desc id="fig-inc-d">A row of twenty blocks represents the files on a PC. Two are highlighted as changed since yesterday. Only those two travel to the server; the other eighteen stay where they are, already backed up.</desc>
+  <text class="lbl-strong" x="0" y="16">Files on the PC today</text>
+  <text class="lbl-muted" x="520" y="16" text-anchor="end">18 unchanged · 2 changed</text>
+  <g class="blocks" transform="translate(0,30)">
+    <rect class="blk" x="0" width="20" height="20" rx="3"/><rect class="blk" x="26" width="20" height="20" rx="3"/><rect class="blk" x="52" width="20" height="20" rx="3"/><rect class="blk" x="78" width="20" height="20" rx="3"/>
+    <rect class="blk" x="104" width="20" height="20" rx="3"/><rect class="blk" x="130" width="20" height="20" rx="3"/><rect class="blk changed c1" x="156" width="20" height="20" rx="3"/><rect class="blk" x="182" width="20" height="20" rx="3"/>
+    <rect class="blk" x="208" width="20" height="20" rx="3"/><rect class="blk" x="234" width="20" height="20" rx="3"/><rect class="blk" x="260" width="20" height="20" rx="3"/><rect class="blk" x="286" width="20" height="20" rx="3"/>
+    <rect class="blk" x="312" width="20" height="20" rx="3"/><rect class="blk" x="338" width="20" height="20" rx="3"/><rect class="blk" x="364" width="20" height="20" rx="3"/><rect class="blk changed c2" x="390" width="20" height="20" rx="3"/>
+    <rect class="blk" x="416" width="20" height="20" rx="3"/><rect class="blk" x="442" width="20" height="20" rx="3"/><rect class="blk" x="468" width="20" height="20" rx="3"/><rect class="blk" x="494" width="20" height="20" rx="3"/>
+  </g>
+  <g class="travel">
+    <rect class="packet t1" x="156" y="30" width="20" height="20" rx="3"/>
+    <rect class="packet t2" x="390" y="30" width="20" height="20" rx="3"/>
+  </g>
+  <g transform="translate(0,120)">
+    <rect class="box server-bar" x="0" y="0" width="520" height="44" rx="8"/>
+    <text class="lbl" x="14" y="27">On the server</text>
+    <text class="lbl-muted" x="506" y="27" text-anchor="end">yesterday's backup + today's 2 changed files</text>
+  </g>
+</svg>
+        <figcaption>After the first backup, only what changed is sent. Eighteen files that did not change cost nothing.</figcaption>
+      </figure>
+      <figure>
+        <svg class="fig fig-dedup" viewBox="0 0 520 190" role="img" aria-labelledby="fig-dd-t fig-dd-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-dd-t">The same file on three PCs is stored once on the server</title>
+  <desc id="fig-dd-d">Three PCs each hold a copy of the same document. Lines from all three lead to one server, which holds a single copy labelled "stored once".</desc>
+  <g transform="translate(10,14)"><rect class="box" width="64" height="42" rx="6"/><rect class="doc" x="22" y="9" width="20" height="24" rx="2"/><text class="lbl" x="74" y="26">Reception</text></g>
+  <g transform="translate(10,74)"><rect class="box" width="64" height="42" rx="6"/><rect class="doc" x="22" y="9" width="20" height="24" rx="2"/><text class="lbl" x="74" y="26">Accounts</text></g>
+  <g transform="translate(10,134)"><rect class="box" width="64" height="42" rx="6"/><rect class="doc" x="22" y="9" width="20" height="24" rx="2"/><text class="lbl" x="74" y="26">Owner</text></g>
+  <text class="lbl-muted" x="150" y="186">quotation-template.docx, 2.4 MB, on every PC</text>
+  <g class="links">
+    <path d="M150 35 C 230 35, 300 95, 380 95"/>
+    <path d="M150 95 L 380 95"/>
+    <path d="M150 155 C 230 155, 300 95, 380 95"/>
+  </g>
+  <g transform="translate(382,49)">
+    <rect class="box server" width="88" height="92" rx="8"/>
+    <rect class="doc big" x="34" y="18" width="20" height="24" rx="2"/>
+    <text class="lbl-strong" x="44" y="66" text-anchor="middle">stored once</text>
+    <text class="lbl-muted" x="44" y="82" text-anchor="middle">2.4 MB, not 7.2</text>
+  </g>
+</svg>
+        <figcaption>The same file on three PCs is stored once on the server. Identical content anywhere in the office counts once.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <svg class="fig fig-versions" viewBox="0 0 520 150" role="img" aria-labelledby="fig-ver-t fig-ver-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-ver-t">Restore points over time, one selected</title>
+  <desc id="fig-ver-d">A timeline runs from a month ago to today. Restore points sit along it, close together for recent hours and days and spaced out further back. One point, Tuesday at two in the afternoon, is selected and labelled as the version to go back to.</desc>
+  <text class="lbl-strong" x="0" y="16">Restore points you can go back to</text>
+  <line class="axis" x1="10" y1="80" x2="510" y2="80"/>
+  <text class="lbl-muted" x="10" y="106" text-anchor="start">a month ago</text>
+  <text class="lbl-muted" x="510" y="106" text-anchor="end">today</text>
+  <g class="pts">
+    <circle cx="30" cy="80" r="4"/><circle cx="80" cy="80" r="4"/><circle cx="130" cy="80" r="4"/><circle cx="180" cy="80" r="4"/>
+    <circle cx="230" cy="80" r="4"/><circle cx="265" cy="80" r="4"/><circle cx="300" cy="80" r="4"/><circle cx="330" cy="80" r="4"/>
+    <circle cx="355" cy="80" r="4"/><circle cx="378" cy="80" r="4"/><circle cx="398" cy="80" r="4"/><circle cx="416" cy="80" r="4"/>
+    <circle cx="432" cy="80" r="4"/><circle cx="446" cy="80" r="4"/><circle cx="458" cy="80" r="4"/><circle cx="468" cy="80" r="4"/>
+    <circle cx="477" cy="80" r="4"/><circle cx="485" cy="80" r="4"/><circle cx="492" cy="80" r="4"/><circle cx="498" cy="80" r="4"/><circle cx="504" cy="80" r="4"/>
+  </g>
+  <g class="sel" transform="translate(378,80)">
+    <circle class="ring" r="9"/>
+    <circle class="dot" r="4.5"/>
+    <line x1="0" y1="-12" x2="0" y2="-30"/>
+    <rect class="tag" x="-64" y="-52" width="128" height="22" rx="5"/>
+    <text class="lbl-on" x="0" y="-37" text-anchor="middle">Tuesday, 2:00 PM</text>
+  </g>
+  <text class="lbl-muted" x="260" y="134" text-anchor="middle">24 hourly · 45 daily · 8 weekly · 12 monthly, and you decide the numbers</text>
+</svg>
+      <figcaption>Restore points are close together for recent hours and days and spaced out further back, and you can go back to any of them.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -75,6 +155,16 @@
       <div class="card"><h3>One page for every PC</h3><p>The server's console lists each computer, when it last backed up, which version it runs and whether it is overdue.</p></div>
       <div class="card"><h3>History on every backup</h3><p>Each PC shows its recent runs: what happened, how long it took, and the full reason when one failed. Intermittent problems show up here.</p></div>
       <div class="card"><h3>Errors written for people</h3><p>"The server cannot be reached; this PC will try again by itself" rather than a number. And what to do about it, when there is something to do.</p></div>
+    </div>
+    <div class="figs">
+      <figure class="shot">
+        <img src="/assets/img/server-fleet.png" width="1280" height="330" loading="lazy" alt="The server's Fleet page: a table of PCs with the last run, when it ran, the version each runs, and a green ok status.">
+        <figcaption>The server's Fleet page: every PC, when it last backed up, and whether it is overdue.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/img/client-history.png" width="1280" height="800" loading="lazy" alt="The History dialog for one backup on a PC: the last run succeeded, with how long it took, how many files were new and how much was uploaded.">
+        <figcaption>History on a PC: each run, how long it took, and the full reason when one failed.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -137,7 +227,8 @@
       <a href="/legal/eula">Licence agreement</a>
     </div>
   </div>
-  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.
+    This website loads nothing from anyone else: no trackers, no analytics scripts, no cookie banner to click.</div>
 </footer>
 </body>
 </html>

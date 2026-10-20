@@ -1,0 +1,15 @@
+<svg class="fig fig-recycle" viewBox="0 0 520 150" role="img" aria-labelledby="fig-rb-t fig-rb-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-rb-t">A backup deleted by a PC is held in the server's recycle bin for 30 days</title>
+  <desc id="fig-rb-d">A PC, possibly infected, sends a delete to the server. The deleted data does not vanish: it moves into a recycle bin on the server that only the server controls, where it is kept for 30 days and can be put back by an administrator.</desc>
+  <g transform="translate(40,40)"><rect class="box" width="64" height="42" rx="6"/><text class="lbl" x="32" y="62" text-anchor="middle">Infected PC</text><text class="lbl-muted" x="32" y="80" text-anchor="middle">"delete everything"</text></g>
+  <path class="link arrow" d="M106 61 L 160 61"/>
+  <g transform="translate(162,20)">
+    <rect class="box server" width="196" height="84" rx="8"/>
+    <text class="lbl" x="14" y="22">Server</text>
+    <rect class="bin" x="18" y="34" width="160" height="36" rx="6"/>
+    <text class="lbl-on" x="98" y="57" text-anchor="middle">Recycle bin · kept 30 days</text>
+    <rect class="packet fall" x="91" y="6" width="14" height="14" rx="2"/>
+  </g>
+  <path class="link arrow" d="M360 61 L 414 61"/>
+  <g transform="translate(416,40)"><rect class="box" width="64" height="42" rx="6"/><text class="lbl" x="32" y="62" text-anchor="middle">Administrator</text><text class="lbl-muted" x="32" y="80" text-anchor="middle">"put it back"</text></g>
+</svg>

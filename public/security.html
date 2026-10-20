@@ -10,6 +10,11 @@
 <meta property="og:description" content="How BackupMate protects your backups: encryption before upload, certificates for every PC, a 30-day recycle bin against ransomware, and exactly what does and does not leave your network.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://backupmate.buzzneuron.com/security">
+<meta property="og:image" content="https://backupmate.buzzneuron.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BackupMate: every PC in your office, backed up. Nothing leaves the building.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -50,6 +55,39 @@
       <tr><th>The PC is lost or dead</th><td>Possible only with the passphrase</td><td>Recover from the server directly</td></tr>
       <tr><th>Suits</th><td>Personal machines; maximum privacy</td><td>Company-owned machines, where the files belong to the business</td></tr>
     </table>
+    <figure>
+      <svg class="fig fig-keys" viewBox="0 0 520 210" role="img" aria-labelledby="fig-keys-t fig-keys-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-keys-t">Who holds the encryption key: the PC only, or the PC and the server</title>
+  <desc id="fig-keys-d">Two panels. In the first, "you hold the key", a PC has a key and the server holds a padlock: it stores what it cannot read. In the second, "the server keeps a copy", both the PC and the server have a key, and an administrator can recover files without the PC.</desc>
+  <g transform="translate(0,0)">
+    <rect class="panel" x="0" y="0" width="250" height="210" rx="12"/>
+    <text class="lbl-strong" x="16" y="26">You hold the key (default)</text>
+    <g transform="translate(24,60)"><rect class="box" width="64" height="42" rx="6"/><text class="lbl" x="32" y="62" text-anchor="middle">PC</text>
+      <g class="key" transform="translate(44,-14)"><circle cx="0" cy="0" r="6"/><line x1="5" y1="3" x2="18" y2="16"/><line x1="12" y1="10" x2="9" y2="13"/><line x1="16" y1="14" x2="13" y2="17"/></g></g>
+    <path class="link" d="M88 81 L 150 81"/>
+    <g transform="translate(152,55)"><rect class="box server" width="70" height="56" rx="8"/>
+      <g class="lock" transform="translate(35,28)"><rect x="-9" y="-3" width="18" height="14" rx="2"/><path d="M-5 -3 V-8 a5 5 0 0 1 10 0 V-3"/></g>
+      <text class="lbl" x="35" y="76" text-anchor="middle">Server</text></g>
+    <text class="lbl-muted" x="16" y="160">Stores what it cannot read.</text>
+    <text class="lbl-muted" x="16" y="178">Lose the passphrase, lose the backups:</text>
+    <text class="lbl-muted" x="16" y="196">nobody can open them, including us.</text>
+  </g>
+  <g transform="translate(270,0)">
+    <rect class="panel" x="0" y="0" width="250" height="210" rx="12"/>
+    <text class="lbl-strong" x="16" y="26">The server keeps a copy</text>
+    <g transform="translate(24,60)"><rect class="box" width="64" height="42" rx="6"/><text class="lbl" x="32" y="62" text-anchor="middle">PC</text>
+      <g class="key" transform="translate(44,-14)"><circle cx="0" cy="0" r="6"/><line x1="5" y1="3" x2="18" y2="16"/><line x1="12" y1="10" x2="9" y2="13"/><line x1="16" y1="14" x2="13" y2="17"/></g></g>
+    <path class="link" d="M88 81 L 150 81"/>
+    <g transform="translate(152,55)"><rect class="box server" width="70" height="56" rx="8"/>
+      <g class="key" transform="translate(28,22)"><circle cx="0" cy="0" r="6"/><line x1="5" y1="3" x2="18" y2="16"/><line x1="12" y1="10" x2="9" y2="13"/><line x1="16" y1="14" x2="13" y2="17"/></g>
+      <text class="lbl" x="35" y="76" text-anchor="middle">Server</text></g>
+    <text class="lbl-muted" x="16" y="160">An administrator can recover any</text>
+    <text class="lbl-muted" x="16" y="178">PC's files without that PC, and can</text>
+    <text class="lbl-muted" x="16" y="196">read them. Chosen before PCs connect.</text>
+  </g>
+</svg>
+      <figcaption>Who holds the key decides who can read the backups. By default only the PC does; a server that keeps a copy can recover files without the PC, and can read them.</figcaption>
+    </figure>
     <div class="note warn"><p><strong>With the default, a lost passphrase means lost backups.</strong> That is what makes it private, and nobody can undo it. Keep the passphrase in a password manager, or choose the second mode.</p></div>
 
     <h2>Only your PCs can connect</h2>
@@ -57,6 +95,24 @@
 
     <h2>Ransomware and deleted backups</h2>
     <p>The usual way a backup is lost to ransomware is that the infected PC is allowed to delete it. In BackupMate, nothing a PC deletes or overwrites on the server is gone at once. It is moved to a recycle bin that only the server controls, and kept for 30 days. If backups go missing, an administrator puts back everything deleted in the last so many hours with one button.</p>
+    <figure>
+      <svg class="fig fig-recycle" viewBox="0 0 520 150" role="img" aria-labelledby="fig-rb-t fig-rb-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-rb-t">A backup deleted by a PC is held in the server's recycle bin for 30 days</title>
+  <desc id="fig-rb-d">A PC, possibly infected, sends a delete to the server. The deleted data does not vanish: it moves into a recycle bin on the server that only the server controls, where it is kept for 30 days and can be put back by an administrator.</desc>
+  <g transform="translate(40,40)"><rect class="box" width="64" height="42" rx="6"/><text class="lbl" x="32" y="62" text-anchor="middle">Infected PC</text><text class="lbl-muted" x="32" y="80" text-anchor="middle">"delete everything"</text></g>
+  <path class="link arrow" d="M106 61 L 160 61"/>
+  <g transform="translate(162,20)">
+    <rect class="box server" width="196" height="84" rx="8"/>
+    <text class="lbl" x="14" y="22">Server</text>
+    <rect class="bin" x="18" y="34" width="160" height="36" rx="6"/>
+    <text class="lbl-on" x="98" y="57" text-anchor="middle">Recycle bin · kept 30 days</text>
+    <rect class="packet fall" x="91" y="6" width="14" height="14" rx="2"/>
+  </g>
+  <path class="link arrow" d="M360 61 L 414 61"/>
+  <g transform="translate(416,40)"><rect class="box" width="64" height="42" rx="6"/><text class="lbl" x="32" y="62" text-anchor="middle">Administrator</text><text class="lbl-muted" x="32" y="80" text-anchor="middle">"put it back"</text></g>
+</svg>
+      <figcaption>A delete from a PC moves the data into a recycle bin only the server controls, where it stays for 30 days. An administrator puts it back with one button.</figcaption>
+    </figure>
     <p>This protects the backups against a compromised <em>PC</em>. It does not protect them against someone who takes control of the <em>server itself</em>. For that, keep a second copy of the server's storage somewhere the server cannot reach: a disk you swap weekly, or another machine.</p>
 
     <h2>What BackupMate sends over the internet</h2>
@@ -117,7 +173,8 @@
       <a href="/legal/eula">Licence agreement</a>
     </div>
   </div>
-  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.
+    This website loads nothing from anyone else: no trackers, no analytics scripts, no cookie banner to click.</div>
 </footer>
 </body>
 </html>

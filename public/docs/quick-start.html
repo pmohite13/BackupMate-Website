@@ -10,6 +10,11 @@
 <meta property="og:description" content="Install the BackupMate server, connect your first PC and take your first backup, step by step.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://backupmate.buzzneuron.com/docs/quick-start">
+<meta property="og:image" content="https://backupmate.buzzneuron.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BackupMate: every PC in your office, backed up. Nothing leaves the building.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -65,6 +70,10 @@
     <h3>5. Create a code for the first PC</h3>
     <p>Go to <strong>Settings → Licence and machines → Add a machine</strong> and press <strong>Create an enrolment code</strong>. Copy the code shown. It starts with <code>BM1-</code>. It connects one PC, once, and is shown only this time. Create a new one for each PC you add.</p>
     <p>The code is everything the PC needs to find your server and check that it is talking to the real one, so you can send it by email or chat to whoever is at the PC. Treat it like a key until it has been used.</p>
+    <figure class="shot">
+      <img src="/assets/img/server-add-machine.png" width="1280" height="620" loading="lazy" alt="The Add a machine section of the server's Settings page, showing a freshly created enrolment code beginning BM1- and the button to create another.">
+      <figcaption>Add a machine, on the server: the code is shown once, so copy it before leaving the page.</figcaption>
+    </figure>
 
     <h2>Part 2: the first PC</h2>
 
@@ -96,6 +105,10 @@
 
     <h3>10. Restore one file</h3>
     <p>A backup you have never restored from is a hope, not a backup. In the Backups panel press <strong>Restore</strong>, choose <em>Latest</em>, choose one file, and restore it to a different folder such as <code>C:\RestoreTest</code>. Open it.</p>
+    <figure class="shot">
+      <img src="/assets/img/client-restore.png" width="1280" height="800" loading="lazy" alt="The Restore dialog on a PC with the latest restore point selected and a folder to restore to.">
+      <figcaption>The Restore dialog. Choose files and folders… lets you tick exactly what you want back.</figcaption>
+    </figure>
 
     <h3>11. Check the server sees it</h3>
     <p>In the server's console, the <strong>Fleet</strong> page should list the PC with a recent backup and the status <em>ok</em>.</p>
@@ -156,7 +169,8 @@
       <a href="/legal/eula">Licence agreement</a>
     </div>
   </div>
-  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.</div>
+  <div class="wrap small legal-line">© 2026 Pranay Mohite. BackupMate is a product of BuzzNeuron.
+    This website loads nothing from anyone else: no trackers, no analytics scripts, no cookie banner to click.</div>
 </footer>
 </body>
 </html>

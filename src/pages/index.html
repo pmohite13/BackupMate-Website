@@ -2,16 +2,22 @@ title: Backup for your office PCs, kept in your office
 description: BackupMate backs up every Windows PC in your office to a server you own. Encrypted, automatic, no cloud, no monthly storage bill. Free for 3 PCs.
 ---
 <section class="hero">
-  <div class="wrap">
-    <h1>Every PC in your office, backed up.<br>Nothing leaves the building.</h1>
-    <p class="lead">BackupMate backs up the Windows computers in your office to one machine you already own.
-    It runs by itself, encrypts everything before it is sent, and tells you when something is wrong.
-    No cloud account, no monthly storage bill, and your files never cross the internet.</p>
-    <div class="actions">
-      <a class="btn primary" href="/download">Download free</a>
-      <a class="btn" href="/pricing">See pricing</a>
+  <div class="wrap cols">
+    <div>
+      <h1>Every PC in your office, backed up.<br>Nothing leaves the building.</h1>
+      <p class="lead">BackupMate is in-office backup: it backs up the Windows computers in your office to one machine you already own.
+      It runs by itself, encrypts everything before it is sent, and tells you when something is wrong.
+      No cloud account, no monthly storage bill, and your files never cross the internet.</p>
+      <div class="actions">
+        <a class="btn primary" href="/download">Download free</a>
+        <a class="btn" href="/pricing">See pricing</a>
+      </div>
+      <p class="small">Free for up to {{free_machines}} PCs, for as long as you like. Every feature for {{trial_days}} days on any number of PCs. No card, no account.</p>
     </div>
-    <p class="small">Free for up to {{free_machines}} PCs, for as long as you like. Every feature for {{trial_days}} days on any number of PCs. No card, no account.</p>
+    <figure>
+      {{figure:office}}
+      <figcaption>Every PC backs up to one machine you already own, over your own network. Nothing crosses the internet.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -20,10 +26,10 @@ description: BackupMate backs up every Windows PC in your office to a server you
     <h2>What goes wrong without it</h2>
     <p class="lead">Most offices find out they had no backup on the day they need one.</p>
     <div class="grid">
-      <div class="card"><h3>The accounts PC dies</h3><p>Years of Tally data, invoices and returns on one disk. The copy on the pen drive is from last April.</p></div>
-      <div class="card"><h3>Ransomware gets in</h3><p>Every file on every shared drive is encrypted overnight, including the "backup" folder on the same network.</p></div>
-      <div class="card"><h3>Somebody deletes a folder</h3><p>Nobody notices for three weeks. The recycle bin was emptied long ago.</p></div>
-      <div class="card"><h3>The backup quietly stopped</h3><p>The external drive filled up in March. Nothing said so.</p></div>
+      <div class="card">{{icon:hard-drive}}<h3>The accounts PC dies</h3><p>Years of Tally data, invoices and returns on one disk. The copy on the pen drive is from last April.</p></div>
+      <div class="card">{{icon:lock}}<h3>Ransomware gets in</h3><p>Every file on every shared drive is encrypted overnight, including the "backup" folder on the same network.</p></div>
+      <div class="card">{{icon:folder-x}}<h3>Somebody deletes a folder</h3><p>Nobody notices for three weeks. The recycle bin was emptied long ago.</p></div>
+      <div class="card">{{icon:bell-off}}<h3>The backup quietly stopped</h3><p>The external drive filled up in March. Nothing said so.</p></div>
     </div>
   </div>
 </section>
@@ -33,10 +39,23 @@ description: BackupMate backs up every Windows PC in your office to a server you
     <h2>Two installers and a wizard</h2>
     <ol class="steps">
       <li><strong>Install the server</strong>On any Windows PC with spare disk space: a desktop that stays on, or an old machine in the corner. It needs nothing set up first.</li>
-      <li><strong>Install the client</strong>On each PC you want protected. Connect it to the server, tick the folders that matter, pick a time.</li>
+      <li><strong>Install the client</strong>On each PC you want protected. Paste the code the server gives you, tick the folders that matter, pick a time.</li>
       <li><strong>Leave it alone</strong>Backups run on schedule, whether or not anyone is logged in. You get an email if one fails or a PC goes quiet.</li>
       <li><strong>Get files back</strong>From the PC itself, or from the server when the PC is the thing that broke. Pick a day, pick the files, restore.</li>
     </ol>
+    <figure>
+      <div class="mock" role="img" aria-label="The Connect dialog on a PC, with an enrolment code pasted in, a passphrase, and a Connect button">
+        <h4>Connect to backup server</h4>
+        <label>Enrolment code</label>
+        <div class="field code">BM1-AFEAY-6LT5Q-TO77N-PZWKP-NAYZI-QWZAF-QYGV5-FA3ZU-OVJTI-TKUHB-LGIRL-GLBVV-QV3XO-A2WO4-ADAAH-UIRKT-JNKE6-UBNJ5-HEET2-THFLA-JQFIA-BUQJL-A6CAA-4FHAF-MQ</div>
+        <label>Name for this computer <span>(optional)</span></label>
+        <div class="field empty">this computer's name</div>
+        <label>Repository passphrase</label>
+        <div class="field">••••••••••••••••••••</div>
+        <div class="row"><span class="b primary">Connect</span><span class="b">Cancel</span></div>
+      </div>
+      <figcaption>Connecting a PC is one paste. The code tells it where the server is and how to trust it; nothing else is typed or copied.</figcaption>
+    </figure>
     <p style="margin-top:22px"><a href="/docs/quick-start">Read the quick-start guide</a></p>
   </div>
 </section>
@@ -45,13 +64,17 @@ description: BackupMate backs up every Windows PC in your office to a server you
   <div class="wrap">
     <h2>Built for the day something goes wrong</h2>
     <div class="grid">
-      <div class="card"><h3>Encrypted before it leaves the PC</h3><p>Each computer encrypts its own files with AES-256. The server stores data it cannot read unless you choose otherwise.</p></div>
-      <div class="card"><h3>Deleted backups come back</h3><p>Nothing a PC deletes from the server is gone at once. It is kept for 30 days, so malware on one machine cannot wipe everyone's history.</p></div>
-      <div class="card"><h3>Restore never stops working</h3><p>If your licence lapses, backups for extra PCs pause. Getting your files back is never restricted, licensed or not.</p></div>
-      <div class="card"><h3>It tells you, plainly</h3><p>An email when a backup fails, when a PC has not backed up for a while, and when it recovers. In words, not error codes.</p></div>
-      <div class="card"><h3>Small after the first run</h3><p>Only what changed is sent, and identical files across the office are stored once. Open files such as a live accounts database are captured properly.</p></div>
-      <div class="card"><h3>One screen for the whole office</h3><p>See every PC, when it last backed up and whether it is overdue. Recover a broken machine's files without the machine.</p></div>
+      <div class="card">{{icon:shield-check}}<h3>Encrypted before it leaves the PC</h3><p>Each computer encrypts its own files with AES-256. The server stores data it cannot read unless you choose otherwise.</p></div>
+      <div class="card">{{icon:archive-restore}}<h3>Deleted backups come back</h3><p>Nothing a PC deletes from the server is gone at once. It is kept for 30 days, so malware on one machine cannot wipe everyone's history.</p></div>
+      <div class="card">{{icon:life-buoy}}<h3>Restore never stops working</h3><p>If your licence lapses, backups for extra PCs pause. Getting your files back is never restricted, licensed or not.</p></div>
+      <div class="card">{{icon:mail-check}}<h3>It tells you, plainly</h3><p>An email when a backup fails, when a PC has not backed up for a while, and when it recovers. In words, not error codes.</p></div>
+      <div class="card">{{icon:layers}}<h3>Small after the first run</h3><p>Only what changed is sent, and identical files across the office are stored once. Open files such as a live accounts database are captured properly.</p></div>
+      <div class="card">{{icon:layout-dashboard}}<h3>One screen for the whole office</h3><p>See every PC, when it last backed up and whether it is overdue. Recover a broken machine's files without the machine.</p></div>
     </div>
+    <figure class="shot narrow">
+      <img src="/assets/img/client-restore.png" width="1280" height="800" loading="lazy" alt="The Restore dialog in BackupMate on a PC: the latest restore point is selected, with the choice of everything or particular files, a folder to restore to, and what to do if a file already exists.">
+      <figcaption>Getting files back: pick a restore point, pick the files, choose where they go.</figcaption>
+    </figure>
     <p style="margin-top:22px"><a href="/features">Everything it does</a> · <a href="/security">How it is secured</a></p>
   </div>
 </section>
